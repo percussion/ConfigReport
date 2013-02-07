@@ -14,7 +14,7 @@
       <PSXExportDescriptor archiveType="normal">
          <PSXDescriptor id="8121985144752973584" name="ConfigReport">
             <Description/>
-            <Publisher name="Percussion Software PSO" url="http://www.percussion.com"/>
+            <Publisher name="Percussion Software" url="http://www.percussion.com"/>
             <CmsVersion max="6.7.0" min="6.7.0"/>
             <Version>1.0.0</Version>
             <ImplConfigFile/>
