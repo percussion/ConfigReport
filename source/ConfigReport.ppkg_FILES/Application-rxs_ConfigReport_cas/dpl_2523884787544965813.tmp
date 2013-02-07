@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<workflows>
+			
+				<xsl:apply-templates select="/*/WORKFLOWAPPS"/>
+		
+		</workflows>
+	</xsl:template>
+	<xsl:template match="WORKFLOWAPPS">
+	<workflow>
+		<name><xsl:value-of select="@WORKFLOWAPPNAME"/></name>
+	        <desc><xsl:value-of select="@WORKFLOWAPPDESC"/></desc>
+		<diaglink><xsl:value-of select="/*/@workflowdiaglink"/></diaglink>
+
+		<wfperms>
+			
+				<xsl:apply-templates select="state"/>
+		</wfperms>
+		<xsl:copy-of select="document(concat(/*/@transitionroleslink,'&amp;sys_workflowid=',@WORKFLOWAPPID))/*"/>
+		<xsl:copy-of select="document(concat(/*/@transitionnotificationslink,'&amp;sys_workflowid=',@WORKFLOWAPPID))/*"/>
+</workflow>
+		</xsl:template>
+	<xsl:template match="state">
+	
+			<xsl:for-each select="role[@assignment='3' or @assignment='2']">
+				<role>
+				<state><xsl:choose>
+					<xsl:when test="position()=1"><xsl:value-of select="../@statename"/></xsl:when>
+					<xsl:otherwise>&#160;</xsl:otherwise>
+				</xsl:choose></state>
+					<rolename><xsl:value-of select="@name"/></rolename>
+
+				<assignment>
+				<xsl:choose>
+					<xsl:when test="@assignment='3'">Assignee</xsl:when>
+					<xsl:when test="@assignment='2'">Reader</xsl:when>
+				</xsl:choose>
+				</assignment>
+				<adhoc>
+				<xsl:choose>
+					<xsl:when test="@adhoc='0'">Disabled</xsl:when>
+					<xsl:when test="@adhoc='1'">Enabled</xsl:when>
+					<xsl:when test="@adhoc='2'">Anonymous</xsl:when>
+				</xsl:choose>
+				</adhoc>
+					<notify>
+				<xsl:choose>
+					<xsl:when test="@notify='n'">No</xsl:when>
+					<xsl:when test="@notify='y'">Yes</xsl:when>
+				</xsl:choose>
+				</notify>
+					<showininbox>
+				<xsl:choose>
+					<xsl:when test="@showinbox='n'">No</xsl:when>
+					<xsl:when test="@showinbox='y'">Yes</xsl:when>
+				</xsl:choose>
+				</showininbox>
+
+</role>
+			</xsl:for-each>
+			
+		
+	</xsl:template>
+</xsl:stylesheet>

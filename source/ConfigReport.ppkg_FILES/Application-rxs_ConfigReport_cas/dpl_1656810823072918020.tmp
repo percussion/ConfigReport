@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h3/>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						This field cannot be empty and must be unique within the folder.
+					 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					Java/global/percussion/generic/sys_DateFormat(
+								'yyyy-MM-dd'
+							, 
+								''
+							)
+				 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentexpirydate 
+			</td>
+               <td>Expiration Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_pubdate 
+			</td>
+               <td>Pub Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_pathname 
+			</td>
+               <td>Path Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_suffix 
+			</td>
+               <td>Suffix:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					'.html'
+				 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_community
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_lang
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_reminderdate 
+			</td>
+               <td>Reminder Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_hibernateVersion 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>

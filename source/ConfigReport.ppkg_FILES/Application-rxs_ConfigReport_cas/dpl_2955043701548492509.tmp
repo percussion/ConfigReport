@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h3>shared</h3>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/filename 
+			</td>
+               <td>File Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/keywords 
+			</td>
+               <td>Keywords:
+			 
+			</td>
+               <td>sys_TextArea 
+			</td>
+               <td>text 	
+			</td>
+               <td>1024 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/description 
+			</td>
+               <td>Description:
+			 
+			</td>
+               <td>sys_TextArea 
+			</td>
+               <td>text 	
+			</td>
+               <td>1024 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/callout 
+			</td>
+               <td>Callout:
+			 
+			</td>
+               <td>sys_EditLive 
+			</td>
+               <td>text 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/body 
+			</td>
+               <td>Body:
+			 
+			</td>
+               <td>sys_EditLive 
+			</td>
+               <td>text 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/webdavowner 
+			</td>
+               <td>WebDAV Owner:
+			 
+			</td>
+               <td>sys_TextArea 
+			</td>
+               <td>text 	
+			</td>
+               <td>255 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+<h3>sharedbinary</h3>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedbinary/item_file_attachment 
+			</td>
+               <td>File:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td>binary 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+                     The file specified for upload did not exist. Please specify an existing file.
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedbinary/item_file_attachment_filename 
+			</td>
+               <td>Binary Filename:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedbinary/item_file_attachment_size 
+			</td>
+               <td>File Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedbinary/item_file_attachment_type 
+			</td>
+               <td>File Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>256 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedbinary/item_file_attachment_ext 
+			</td>
+               <td>File Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>10 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+<h3>sharedimage</h3>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1 
+			</td>
+               <td>Image:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td>binary 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_filename 
+			</td>
+               <td>Image File Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_size 
+			</td>
+               <td>Image File Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_type 
+			</td>
+               <td>Image Mime Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>256 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_ext 
+			</td>
+               <td>Image Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>10 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_height 
+			</td>
+               <td>Image Height:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img1_width 
+			</td>
+               <td>Image Width:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img_alt 
+			</td>
+               <td>Image Alt Text:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2 
+			</td>
+               <td>Mini:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td>binary 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_filename 
+			</td>
+               <td>Mini File Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_size 
+			</td>
+               <td>Mini File Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_type 
+			</td>
+               <td>Mini Mime Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>256 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_ext 
+			</td>
+               <td>Mini Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>10 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_height 
+			</td>
+               <td>Mini Height:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>sharedimage/img2_width 
+			</td>
+               <td>Mini Width:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>integer 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>

@@ -1,3 +1,9 @@
 http://www.percussion.com
 
-Generates detailed reports on design objeccts and implementation details
+Generates detailed reports on design objects and implementation details.
+
+To create the package archive run ant in the Config Report directory. This will
+generate the package file in the dist/ConfigReport.ppkg location.
+
+This version of the package will install on any 7.x version of Rhythmyx/CM System.
+

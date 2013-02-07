@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Content Lists</title>
+			</head>
+			<body>
+				<h2>Content Lists</h2>
+						<xsl:apply-templates select="/*/RXCONTENTLIST"/>
+			
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="RXCONTENTLIST">
+		<h4><xsl:value-of select="NAME"/></h4>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td><strong>Name</strong></td>
+					<td><strong>Value</strong></td>
+				</tr>
+				<tr>
+					<td>Content List Name</td>
+					<td><xsl:value-of select="NAME"/></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td><xsl:value-of select="DESCRIPTION"/></td>
+				</tr>
+
+				<tr>
+					<td>Item Filter</td>
+					<td><xsl:value-of select="FILTER_NAME"/></td>
+				</tr>
+
+				<tr>
+					<td>Type</td>
+					<td><xsl:choose>
+						<xsl:when test="TYPE=0">Normal</xsl:when>
+						<xsl:when test="TYPE=1">Incremental</xsl:when>
+					</xsl:choose> /		<xsl:choose>
+						<xsl:when test="EDITIONTYPE='1'">Manual</xsl:when>
+						<xsl:when test="EDITIONTYPE='2'">Publish</xsl:when>
+						<xsl:when test="EDITIONTYPE='3'">Recovery</xsl:when>
+						<xsl:when test="EDITIONTYPE='5'">Unpublish Then Publish</xsl:when>
+					</xsl:choose>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Generator</td>
+					<td><xsl:value-of select="GENERATOR"/></td>
+				</tr>
+				<xsl:for-each select="GENPARAM[string-length(@NAME)&gt;0]">
+				<tr>
+					<td><xsl:value-of select="@NAME"/></td>
+					<td><xsl:value-of select="@VALUE"/></td>
+				</tr>
+				</xsl:for-each>
+				<tr>
+					<td>Template Expander</td>
+					<td><xsl:value-of select="EXPANDER"/></td>
+				</tr>
+				<xsl:for-each select="EXPPARAM[string-length(@NAME)&gt;0]">
+				<tr>
+					<td><xsl:value-of select="@NAME"/></td>
+					<td><xsl:value-of select="@VALUE"/></td>
+				</tr>
+				</xsl:for-each>
+
+				
+
+				
+
+			</tbody>
+		</table>
+	</xsl:template>
+</xsl:stylesheet>

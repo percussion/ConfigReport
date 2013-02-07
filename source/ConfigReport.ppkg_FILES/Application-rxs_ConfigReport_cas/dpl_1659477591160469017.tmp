@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<contentlists>
+			
+						<xsl:apply-templates select="/*/RXCONTENTLIST"/>
+			
+			
+		</contentlists>
+	</xsl:template>
+	<xsl:template match="RXCONTENTLIST">
+		<contentlist>
+		<name><xsl:value-of select="NAME"/></name>
+		
+				<desc>
+					<xsl:value-of select="DESCRIPTION"/>
+				</desc>
+
+				<url>
+					<xsl:value-of select="URL"/>
+				</url>
+
+				<type>
+					
+					<xsl:choose>
+						<xsl:when test="TYPE=0">Normal</xsl:when>
+						<xsl:when test="TYPE=1">Incremental</xsl:when>
+					</xsl:choose>/
+					<xsl:choose>
+						<xsl:when test="EDITIONTYPE='1'">Manual</xsl:when>
+						<xsl:when test="EDITIONTYPE='2'">Automatic</xsl:when>
+						<xsl:when test="EDITIONTYPE='3'">Recovery</xsl:when>
+						<xsl:when test="EDITIONTYPE='4'">Mirror</xsl:when>
+					</xsl:choose>
+					
+				</type>
+
+				<generator>
+					<name><xsl:value-of select="GENERATOR"/></name>
+					<xsl:for-each select="GENPARAM">
+					<param>
+					<name><xsl:value-of select="@NAME"/></name>
+					<value><xsl:value-of select="@VALUE"/></value>
+					</param>
+				</xsl:for-each>
+				</generator>
+				<temp_exp>
+					<name><xsl:value-of select="EXPANDER"/></name>
+					<xsl:for-each select="EXPPARAM">
+				<param>
+					<name><xsl:value-of select="@NAME"/></name>
+					<value><xsl:value-of select="@VALUE"/></value>
+				</param>
+</xsl:for-each>			
+				</temp_exp>
+				
+
+				
+</contentlist>
+				
+
+	</xsl:template>
+</xsl:stylesheet>

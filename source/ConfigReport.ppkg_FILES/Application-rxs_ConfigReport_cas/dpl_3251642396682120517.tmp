@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h2>FCCC Auto Index
+					
+
+						(fccc_IndexAuto)
+					
+				</h2>
+<p/>
+<h3>Access Control</h3>
+<table border="1">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>Data Create</th>
+               <th>Data Delete</th>
+               <th>Data Query</th>
+               <th>Data Update</th>
+               <th>Design Delete</th>
+               <th>Design Read</th>
+               <th>Design Update</th>
+               <th>Modify ACL</th>
+            </tr>
+            <tr>
+               <td>Anonymous</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <td>Default</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+            </tr>
+         </tbody>
+      </table>
+<h3>Editor</h3>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						
+                  This field cannot be empty and must be unique within the folder.
+					
+                		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               
+						
+                  User/SessionObject/sys_community
+					
+               
+				
+             
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               
+						
+                  User/SessionObject/sys_lang
+					
+               
+				
+             
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_hibernateVersion 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               Java/global/percussion/generic/sys_DateFormat(
+								
+                        'yyyy-MM-dd'
+							
+                     , 
+								
+                        ''
+							
+                     )
+				
+             
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentexpirydate 
+			</td>
+               <td>Expiration Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_reminderdate 
+			</td>
+               <td>Reminder Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>query 
+			</td>
+               <td>Slot Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>100 	
+			</td>
+               <td>
+                           'enter name of slot to be used, eg fccc_Slot_FacultyNameListAuto'
+                         
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error: 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+<h3>Workflow</h3>
+<p>This content type will use "FCCC Standard Workflow" by default
+		</p>
+<p>The following workflows are also allowed</p>
+<ul>
+         <li>FCCC Standard Workflow</li>
+      </ul>
+<h3>Templates</h3>
+<table border="1" width="100%">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Label</th>
+               <th>Description</th>
+               <th>Slots</th>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_AutoBulletListTwoColumn </td>
+               <td>Snippet - Auto Bulle List Two Column </td>
+               <td>displays the slot set by the query field in the indexAuto content type.  Does not include ul, li, /li, /ul set in slot.  These must be set in the snippet template to create the two column list. </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_AutoBulletList </td>
+               <td>Snippet - Auto Bullet List </td>
+               <td> </td>
+               <td>
+                  <ul>
+                     <li>fccc_Slot_FacultyNameListAuto</li>
+                  </ul> 
+				</td>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_AutoList </td>
+               <td>Snippet - AutoList </td>
+               <td>An auto index to produce list of Research Programs. </td>
+               <td>
+                  <ul>
+                     <li>fccc_Slot_AutoResearchAreas</li>
+                  </ul> 
+				</td>
+            </tr>
+         </tbody>
+      </table>
+<h3>Java Exits</h3>
+<h3>Location Schemes</h3>
+<p>There are no location schemes for this content type.</p>

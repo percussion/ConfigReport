@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="iso-8859-1" indent="yes"/>
+	<xsl:key name="ctvariant" match="variant" use="concat(../contenttype/@name,@variantname)"/>
+	<xsl:key name="ctcommunity" match="community" use="@name"/>
+	<xsl:key name="ct" match="contenttype" use="@name"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>variants</title>
+			</head>
+			<body>
+				<table border="1">
+					<th>
+						<xsl:for-each select="/*/site/communities/community[count(. | key('ctcommunity', @name)[1]) = 1]">
+							<td>
+								<xsl:value-of select="@name"/>
+							</td>
+						</xsl:for-each>
+					</th>
+					<xsl:for-each select="/*/site/communities/community/contenttype[count(. | key('ct', @name)[1]) = 1]">
+						<xsl:variable name="contenttype" select="@name"/>
+						<tr>
+							<td>
+								<strong><xsl:value-of select="@name"/></strong>
+							</td>
+							<xsl:for-each select="/*/site/communities/community[count(. | key('ctcommunity', @name)[1]) = 1]">
+								<td>
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+						</tr>
+						<xsl:for-each select="/*/site/communities/community/contenttype[@name=$contenttype]/variant[count(. | key('ctvariant', concat(../contenttype[@name=$contenttype]/@name,@variantname))[1]) = 1]">
+							<xsl:variable name="variant" select="@variantname"/>		
+								<tr>
+								<td>
+									<xsl:value-of select="@variantname"/>
+								</td>
+								<xsl:for-each select="/*/site/communities/community[count(. | key('ctcommunity', @name)[1]) = 1]">
+								<td>
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype]/variant[@variantname=$variant]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+								</tr>
+							</xsl:for-each>
+					</xsl:for-each>
+				</table>
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>

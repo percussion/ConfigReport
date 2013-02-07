@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
+	<xsl:key name="ctvariant" match="variant" use="concat(../@name,@name)"/>
+	<xsl:key name="ctcommunity" match="community" use="@name"/>
+	<xsl:key name="ct" match="contenttype" use="@name"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>variants</title>
+			</head>
+			<body>
+				<table border="1">
+					<th>
+						<xsl:for-each select="/*/site/community[count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+							
+							<td>
+								<xsl:value-of select="@name"/>
+							</td>
+						</xsl:for-each>
+					</th>
+					<xsl:for-each select="/*/site/community/contenttype[count(. | key('ct', @name)[1]) = 1][not(starts-with(@name,'_') or starts-with(@name,'rff')) or @name='rffNavon' or @name='rffNavImage' or @name='rffNavTree' ]">
+						<xsl:sort select="@name"/>
+						<xsl:variable name="contenttype" select="@name"/> 
+						<tr>
+							<td>
+								<strong><xsl:value-of select="@name"/></strong>
+							</td>
+							<xsl:for-each select="/*/site/community[count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td>
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype and string-length(@ct)&gt;0]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+						</tr>
+						<xsl:for-each select="/*/site/community/contenttype[@name=$contenttype]/variant[count(. | key('ctvariant', concat($contenttype,@name))[1]) = 1][not(starts-with(@name,'_'))]">
+							<xsl:sort select="@name"/>
+							<xsl:variable name="variant" select="@name"/>		
+								<tr>
+								<td>
+									<xsl:value-of select="@name"/> (<xsl:value-of select="@label"/>)
+								</td>
+								<xsl:for-each select="/*/site/community[count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td>
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype]/variant[@name=$variant and string-length(@var)&gt;0]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+								</tr>
+							</xsl:for-each>
+					</xsl:for-each>
+				</table>
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>

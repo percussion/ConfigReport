@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<editions>
+						<xsl:apply-templates select="/*/RXEDITION"/>
+			
+			</editions>
+	</xsl:template>
+	<xsl:template match="RXEDITION">
+		<edition>
+		<name><xsl:value-of select="DISPLAYTITLE"/></name>
+		
+				<desc>
+					<xsl:value-of select="EDITIONCOMMENT"/>
+				</desc>
+
+				<destination>
+					<xsl:value-of select="DESTSITE/@NAME"/>
+				</destination>
+
+				<edition_type>
+									<xsl:choose>
+						<xsl:when test="EDITIONTYPE='1'">Manual</xsl:when>
+						<xsl:when test="EDITIONTYPE='2'">Automatic</xsl:when>
+						<xsl:when test="EDITIONTYPE='3'">Recovery</xsl:when>
+						<xsl:when test="EDITIONTYPE='4'">Mirror</xsl:when>
+					</xsl:choose>
+					
+				</edition_type>
+
+				<contentlists>
+					
+
+	<xsl:apply-templates select="CONTENTLISTS"/>
+		</contentlists>
+	</edition>
+			</xsl:template>
+	<xsl:template match="CONTENTLISTS">
+		<contentlist>
+			<name><xsl:value-of select="@NAME"/></name>
+			<authtype>	<xsl:choose>
+						<xsl:when test="@AUTHTYPE='0'">All Content</xsl:when>
+						<xsl:when test="@AUTHTYPE='1'">All Public Content</xsl:when>
+						<xsl:when test="@AUTHTYPE='2'">Custom</xsl:when>
+						<xsl:when test="@AUTHTYPE='101'">Site Folder Content</xsl:when>
+					</xsl:choose>
+</authtype>
+<context>	<xsl:choose>
+						<xsl:when test="@CONTEXT='0'">Preview Context</xsl:when>
+						<xsl:when test="@CONTEXT='1'">Publish Context</xsl:when>
+	
+					</xsl:choose>
+</context>
+
+		</contentlist>
+	</xsl:template>
+</xsl:stylesheet>

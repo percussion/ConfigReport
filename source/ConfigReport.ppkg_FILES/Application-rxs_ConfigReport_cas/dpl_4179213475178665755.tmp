@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<publishers>
+				<xsl:apply-templates select="/*/RXPUBLISHER"/>
+			
+		</publishers>
+	</xsl:template>
+	<xsl:template match="RXPUBLISHER">
+		<publisher>
+				<name>
+					<xsl:value-of select="NAME"/>
+				
+				</name>
+				
+				<description>
+					<xsl:value-of select="DESCRIPTION"/>
+				</description>
+				<ipaddress>
+					<xsl:value-of select="IPADDRESS"/>
+				</ipaddress>
+
+				<state>
+					
+					<xsl:choose>
+						<xsl:when test="STATE=1">Active</xsl:when>
+						<xsl:otherwise>Inactive</xsl:otherwise>
+					</xsl:choose>
+				
+				</state>
+
+			
+			
+				
+		<xsl:apply-templates select="CONFIG"/>
+			</publisher>
+			</xsl:template>
+	<xsl:template match="CONFIG">
+		<params>
+			<name><xsl:value-of select="@NAME"/></name>
+				<value><xsl:value-of select="@VALUE"/></value>
+				<desc><xsl:value-of select="@DESC"/></desc>
+		</params>
+	</xsl:template>
+</xsl:stylesheet>

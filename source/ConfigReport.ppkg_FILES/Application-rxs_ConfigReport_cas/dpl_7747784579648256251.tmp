@@ -1,0 +1,110 @@
+/*
+Theme: inphecthyuz
+Author: Infected-FX
+URL: www.infectedfx.net
+Country: Mexico
+*/
+
+h1 {
+  	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:24px; font-weight:bold;
+	color: #000000;
+}
+
+h2 {
+  	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:18px; font-weight:bold;
+	color: #a7a7a7;
+}
+
+h3 {
+ 	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:12px; font-weight:bold;
+}
+
+
+
+table {
+	border-spacing:1px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#000;
+	color: #373737;
+}
+
+
+caption {
+	font-weight: bold;
+	background: #50ADEA url(http://infectedfx.net/css/tables/corner.gif) no-repeat right top;
+	border-bottom:2px solid #1975d7;
+	color: #FFF;
+	text-transform:uppercase;
+	padding:10px;
+}
+
+td, th {
+	padding: 2px;
+}
+
+thead th {
+	text-align: center;
+	background: #F5F5F5;
+	color: #666;
+	border: 1px solid #FFF;
+	text-transform:uppercase;
+}
+
+tbody th {
+	font-weight: bold;
+}
+
+tbody tr		{
+	background-color:#EEE; 
+	text-align:left;
+	}
+tbody tr.odd 	{
+	background: #f9f9f9;
+	border-top:1px solid #FFF;
+}
+
+tbody th a:link, tbody th a:visited{
+	color:#96D030;
+	background:url(http://infectedfx.net/css/tables/layout.gif) no-repeat; 
+	padding:3px 0px 0px 18px;
+	}
+tbody th a:hover{
+	color:#FF8601;
+	}
+
+tbody tr td { 
+	height:20px;
+	background: #FFF;
+	border: 1px solid #FFF;
+	}
+
+tbody tr.odd td{ 
+	background: #f9f9f9;
+	border-top:1px solid #FFF;
+	}
+
+table td a:link, table td a:visited {
+	/*color: #1975D7;*/
+	color: #000000;
+	text-decoration: none;
+}
+
+table td a:hover {
+	color: #50ADEA;
+	border-bottom:2px solid #8FD5FF;
+	text-decoration: none ;
+}
+
+
+tfoot th, tfoot td {
+	background-color:#E7E7E7; padding:10px;
+	text-align:center; 
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:22px; font-weight:bold; font-style:italic;
+	border-bottom:3px solid #CCC;
+	border-top:1px solid #DFDFDF;
+}
