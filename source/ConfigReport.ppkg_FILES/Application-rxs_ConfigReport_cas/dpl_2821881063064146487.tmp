@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+	<transitionnotifications>
+		
+					<xsl:apply-templates select="/*/TRANSITIONNOTIFICATIONS"/>
+			
+		
+	
+	</transitionnotifications>
+	</xsl:template>
+	<xsl:template match="TRANSITIONNOTIFICATIONS">
+		<transition_notification>
+			<transitionname><xsl:value-of select="@TRANSITIONNAME"/></transitionname>
+			<notification_suject><xsl:for-each select="NOTIFICATION"><xsl:value-of select="@SUBJECT"/><xsl:if test="not(position()=last())">,</xsl:if></xsl:for-each></notification_suject>
+		</transition_notification>
+	</xsl:template>
+</xsl:stylesheet>

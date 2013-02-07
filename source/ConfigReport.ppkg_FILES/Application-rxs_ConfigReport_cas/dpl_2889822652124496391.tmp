@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:variable name="variantlookup" select="document('./reports/variants.xml')/*"/>
+
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>application report</title>
+			</head>
+			<body>
+				
+				<h1>
+					<xsl:value-of select="*/name"/>
+				</h1>
+				<p>
+					<xsl:value-of select="*/description"/>
+				</p>
+				
+				<h2>Access Control</h2>
+				<xsl:apply-templates select="/*/PSXAcl"/>
+				<h2>Queries</h2>
+				<xsl:apply-templates select="/*/PSXDataSet">
+					<xsl:sort select="PSXRequestor/requestPage"/>	
+				</xsl:apply-templates>
+				<xsl:if test="/*/PSXContentEditor">
+				<h2>Content Editor</h2>
+					<xsl:apply-templates select="/*/PSXContentEditor"/>	
+				</xsl:if>
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="PSXContentEditor">
+		<h3>Content type = <xsl:value-of select="$variantlookup/contenttype[@id=current()/@contentType]/@name"/><xsl:text> (</xsl:text><xsl:value-of select="@contentType"/><xsl:text>)</xsl:text></h3>
+		<h4>Enable related content = <xsl:value-of select="@enableRelatedContent"/>	</h4>
+		<xsl:apply-templates select="PSXDataSet"/>
+		<xsl:variable name="cefile" select="concat('./reports/',/*/name,'_table.html')"/>
+		<xsl:copy-of select="document($cefile)/*/body/node()"/>
+	</xsl:template>	
+	<xsl:template match="PSXContentEditor/PSXDataSet">
+		<xsl:apply-templates select="PSXContentEditorPipe"/>	
+		
+			
+	</xsl:template>	
+
+	<xsl:template name="PSXContainerLocator">
+		<xsl:apply-templates select="PSXTableSet"/>	
+	</xsl:template>	
+	<xsl:template match="PSXTableSet">
+			<xsl:if test="PSXTableRef">
+			<ul>
+				<xsl:apply-templates select="PSXTableRef"/>			
+			</ul>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="PSXTableRef">
+		<li><xsl:value-of select="@name"/></li>
+	</xsl:template>		
+	<xsl:template match="PSXContentEditorPipe">
+		<h4>Pre Exits</h4>
+		<xsl:apply-templates select="InputDataExits"/>
+		<h4>Post Exits</h4>
+		<xsl:apply-templates select="ResultDataExits"/>
+		<h4>Tables</h4>
+		<xsl:apply-templates select="PSXContainerLocator"/>	
+		<h4>Content Editor Mapper</h4>
+		
+	</xsl:template>	
+	
+	<xsl:template match="PSXContentEditorMapper"/>	
+	
+	<xsl:template match="PSXRequestor">
+		<p><strong>Encoding:</strong><xsl:value-of select="characterEncoding"/></p>
+		<p>Mime Types</p>
+		<ul>
+			<xsl:for-each select="MimeProperties/*">
+				<li>
+				<xsl:value-of select="name()"/>:<xsl:value-of select="PSXTextLiteral/text"/>		
+				</li>
+			</xsl:for-each>	
+		</ul>
+	</xsl:template>	
+	<xsl:template match="PSXAcl">
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>Name</td>
+					<td>Type</td>
+					<td>Data Create</td>
+					<td>Data Delete</td>
+					<td>Data Query</td>
+					<td>Data Update</td>
+					<td>Design Delete</td>
+					<td>Design Read</td>
+					<td>Design Update</td>
+					<td>Modify ACL</td>
+				</tr>
+				<xsl:apply-templates select="PSXAclEntry">
+					<xsl:sort select="name"/>
+				</xsl:apply-templates>
+			</tbody>
+		</table>
+	</xsl:template>
+	<xsl:template match="PSXAclEntry">
+		<tr>
+			<td>
+				<xsl:value-of select="name"/>
+			</td>
+			<td>
+				<xsl:value-of select="@type"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@dataCreate"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@dataDelete"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@dataQuery"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@dataUpdate"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@designDelete"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@designRead"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@designUpdate"/>
+			</td>
+			<td>
+				<xsl:value-of select="applicationAccessLevel/@modifyAcl"/>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="PSXDataSet">
+	<xsl:text>&#x0a;</xsl:text>
+	<xsl:comment>##########################################</xsl:comment>
+	<xsl:text>&#x0a;</xsl:text>
+	<xsl:comment>## New Query <xsl:value-of select="PSXRequestor/requestPage"/>  #</xsl:comment>
+	<xsl:text>&#x0a;</xsl:text>	
+	<xsl:comment>##########################################</xsl:comment>
+	<xsl:text>&#x0a;</xsl:text>
+		<h3>
+			<xsl:value-of select="PSXRequestor/requestPage"/> <xsl:text>(</xsl:text><xsl:value-of select="name"/>
+			<xsl:text>)</xsl:text>
+		</h3>
+		
+		<p>
+			<xsl:value-of select="description"/>
+		</p>
+	<xsl:apply-templates select="PSXRequestor"/>
+	
+		<xsl:apply-templates select="PSXQueryPipe"/>
+		<xsl:apply-templates select="PSXResultPageSet"/>
+		
+	</xsl:template>
+	<xsl:template match="PSXResultPageSet">
+		<xsl:if test="PSXResultPage">
+		<h4>Result Pages</h4>
+		
+		<table>
+			
+		<xsl:apply-templates select="PSXResultPage"/>	
+	
+		</table>	
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="PSXResultPage">
+		<tr>
+			<td><xsl:value-of select="styleSheet"/></td>
+			<td><xsl:choose>
+				<xsl:when test="@allowNamespaceCleanup='true'">Namespace Cleanup</xsl:when>
+				<xsl:otherwise>No Namespace Cleanup</xsl:otherwise>	
+				</xsl:choose>
+			</td>
+			<td><xsl:apply-templates select="PSXConditional"/></td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="ResultDataExits">
+		<xsl:if test="PSXExtensionCallSet">
+			<xsl:apply-templates select="PSXExtensionCallSet"/>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="PSXExtensionCallSet">
+		<ul>
+			<xsl:for-each select="PSXExtensionCall">
+				<li>
+					<xsl:apply-templates select="."/>
+				</li>
+			</xsl:for-each>
+		</ul>
+	</xsl:template>
+	<xsl:template match="PSXQueryPipe">
+		<h4>DataTank</h4>
+		<xsl:apply-templates select="PSXBackEndDataTank"/>
+		<h4>Selector</h4>
+		<xsl:apply-templates select="PSXDataSelector"/>
+		<h4>Pager</h4>
+		<xsl:apply-templates select="../PSXResultPager"/>
+		<h4>Mapper</h4>
+		<xsl:apply-templates select="PSXDataMapper"/>
+		<h4>Pre Exits</h4>
+		<xsl:apply-templates select="InputDataExits"/>
+		<h4>Post Exits</h4>
+		<xsl:apply-templates select="ResultDataExits"/>
+	</xsl:template>
+	<xsl:template match="PSXBackEndDataTank">
+		<ul>
+			<xsl:apply-templates select="PSXBackEndTable">
+				<xsl:sort select="table"/>
+			</xsl:apply-templates>
+		</ul>
+	</xsl:template>
+	<xsl:template match="PSXBackEndTable">
+		<li>
+			<xsl:value-of select="table"/>
+		</li>
+	</xsl:template>
+	<xsl:template match="PSXDataSelector[@method='whereClause']">
+		<xsl:apply-templates select="WhereClauses"/>
+	</xsl:template>
+	<xsl:template match="PSXDataSelector[@method='nativeStatement']">
+		<p>
+			<xsl:apply-templates select="nativeStatement"/>
+		</p>
+	</xsl:template>
+	<xsl:template match="WhereClauses">
+		<ul>
+			<xsl:for-each select="PSXWhereClause/PSXConditional">
+				<li>
+					<xsl:apply-templates select="."/>
+				</li>
+			</xsl:for-each>
+		</ul>
+	</xsl:template>
+	<xsl:template match="PSXBackEndColumn">
+		<xsl:value-of select="tableAlias"/>
+		<xsl:text>.</xsl:text>
+		<xsl:value-of select="column"/>
+	</xsl:template>
+	<xsl:template match="PSXSingleHtmlParameter">
+		<xsl:text>PSXSingleHtmlParameter/</xsl:text>
+		<xsl:value-of select="name"/>
+	</xsl:template>
+	<xsl:template match="PSXResultPager">
+		<ul>
+			<li>Max Rows=<xsl:value-of select="maxRowsPerPage"/>
+			</li>
+			<li>Max Pages=<xsl:value-of select="maxPages"/>
+			</li>
+			<li>Max Page Links=<xsl:value-of select="maxPageLinks"/>
+			</li>
+		</ul>
+		<h5>Sorting</h5>
+		<xsl:apply-templates select="../PSXQueryPipe/PSXDataSelector/Sorting"/>
+	</xsl:template>
+	<xsl:template match="Sorting">
+		<table>
+			<xsl:apply-templates select="PSXSortedColumn"/>
+		</table>
+	</xsl:template>
+	<xsl:template match="PSXSortedColumn">
+		<tr>
+			<td>
+				<xsl:apply-templates/>
+			</td>
+			<td>
+				<xsl:choose>
+					<xsl:when test="@isAscending='no'">DESC</xsl:when>
+					<xsl:otherwise>ASC</xsl:otherwise>
+				</xsl:choose>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="PSXDataMapper">
+		<table border="1">
+			<xsl:apply-templates select="PSXDataMapping">
+				<xsl:sort select="PSXXmlField"/>
+			</xsl:apply-templates>
+		</table>
+	</xsl:template>
+	<xsl:template match="PSXDataMapping">
+		<tr>
+			<td>
+				<xsl:apply-templates select="node()[not(self::PSXXmlField) and not(self::Conditionals)]"/>
+			</td>
+			<td>
+				<xsl:value-of select="PSXXmlField"/>
+			</td>
+			<td>
+				<xsl:apply-templates select="Conditionals"/>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="PSXExtensionCall">
+		<xsl:value-of select="name"/>
+		<xsl:text>(</xsl:text>
+		<xsl:for-each select="PSXExtensionParamValue">
+			<xsl:apply-templates select="value"/>
+			<xsl:if test="not(position()=last())">, </xsl:if>
+		</xsl:for-each>
+		<xsl:text>)</xsl:text>
+	</xsl:template>
+	<xsl:template match="PSXTextLiteral">
+		<xsl:text>'</xsl:text>
+		<xsl:value-of select="text"/>
+		<xsl:text>'</xsl:text>
+	</xsl:template>
+	<xsl:template match="Conditionals">
+		<xsl:if test="PSXConditional">
+			<xsl:for-each select="PSXConditional">
+				<xsl:apply-templates select="."/>
+				<xsl:if test="not(position()=last())">
+					<br/>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="PSXConditional">
+		<xsl:apply-templates select="variable"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="operator"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="value"/>
+		<xsl:text> </xsl:text>
+		<xsl:apply-templates select="boolean"/>
+	</xsl:template>
+	<xsl:template match="value">
+		<xsl:apply-templates/>
+	</xsl:template>	
+	<xsl:template match="PSXFunctionCall">
+		<xsl:value-of select="name"/>
+		<xsl:text>(</xsl:text>
+		<xsl:for-each select="PSXFunctionParamValue">
+			<xsl:apply-templates select="."/>
+			<xsl:if test="not(position()=last())">, </xsl:if>
+		</xsl:for-each>
+		<xsl:text>)</xsl:text>
+	</xsl:template>
+</xsl:stylesheet>

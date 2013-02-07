@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+	
+	<html>
+		<head>
+			<title>Transition Roles</title>
+		</head>
+		<body>
+		<h3>Transition Permissions</h3>
+		<xsl:choose>
+			<xsl:when test="/*/*/ROLE">
+				<table border="1">
+					<td>Transition Name</td>
+					<td>Alowed Roles</td>
+					<xsl:apply-templates select="/*/TRANSITIONROLES"/>
+				</table>
+			</xsl:when>
+			<xsl:otherwise>
+			<p>There are no Transition Permissions set for this workflow.</p>
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		</body>
+	</html>
+	</xsl:template>
+	<xsl:template match="TRANSITIONROLES">
+		<tr>
+			<td><xsl:value-of select="@TRANSITIONLABEL"/></td>
+			<td><xsl:for-each select="ROLE"><xsl:value-of select="@NAME"/><xsl:if test="not(position()=last())">,</xsl:if></xsl:for-each></td>
+		</tr>
+	</xsl:template>
+</xsl:stylesheet>

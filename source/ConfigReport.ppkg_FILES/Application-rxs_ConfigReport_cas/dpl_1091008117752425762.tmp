@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<locationschemes>
+				<xsl:apply-templates select="/*/RXCONTEXT"/>
+		</locationschemes>
+	</xsl:template>
+	<xsl:template match="RXCONTEXT">
+		<context>
+			<name><xsl:value-of select="CONTEXTNAME"/></name>
+			<desc><xsl:value-of select="CONTEXTDESC"/></desc>
+			<default><xsl:apply-templates select="RXLOCATIONSCHEME[@ID=current()/DEFAULTSCHEMEID]"/></default>
+			<xsl:apply-templates select="RXLOCATIONSCHEME[not(@ID=current()/DEFAULTSCHEMEID)]"/>		
+		</context>
+		
+		
+	</xsl:template>
+	<xsl:template match="RXLOCATIONSCHEME">
+		<locationscheme>
+			
+		<name><xsl:value-of select="@SCHEMENAME"/></name>
+
+		<desc>
+			<xsl:value-of select="@DESCRIPTION"/>
+		</desc>
+
+		<generator>
+			<xsl:value-of select="@GENERATOR"/>
+		</generator>
+
+		<contenttype>
+			<xsl:value-of select="CONTENTTYPE/@NAME"/>
+		</contenttype>
+
+		<templatename>
+			<xsl:value-of select="TEMPLATE/@NAME"/>
+		</templatename>
+
+		<params>
+
+		<xsl:apply-templates select="PARAMS"/>
+		</params>
+	</locationscheme>
+	
+	</xsl:template>
+	<xsl:template match="PARAMS">
+		<param>
+			<name><xsl:value-of select="@NAME"/></name>
+			<type><xsl:value-of select="@TYPE"/></type>
+			<value><xsl:value-of select="@VALUE"/></value>
+
+		</param>
+		
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT workflow EMPTY>
+<!ATTLIST  workflow workflowappid CDATA #REQUIRED>
+<!ATTLIST  workflow workflowappnname CDATA #REQUIRED>
+<!ATTLIST  workflow administrator CDATA #REQUIRED>
+<!ATTLIST  workflow initialstateid CDATA #REQUIRED>
+<!ATTLIST  workflow workflowappdesc CDATA #REQUIRED>
+<!ELEMENT workflows (workflow* )>
+<!ELEMENT workflowroot (workflows )>

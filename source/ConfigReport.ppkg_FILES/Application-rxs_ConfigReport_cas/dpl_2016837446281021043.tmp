@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Sites</title>
+			</head>
+			<body>
+				<h2>Sites</h2>
+						<xsl:apply-templates select="/*/RXEDITION"/>
+			
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="RXEDITION">
+		<xsl:if test="not(preceding-sibling::RXEDITION[DESTSITE/@ID = current()/DESTSITE/@ID])">
+		<h2><xsl:value-of select="DESTSITE/@NAME"/></h2>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td><strong>Description</strong></td><td><xsl:value-of select="DESTSITE/@DESC"/></td>
+					</tr><tr>	<td><strong>Rhythmyx Path</strong></td><td><xsl:value-of select="DESTSITE/@FOLDER_ROOT"/></td>
+					</tr><tr>	<td><strong>Global Template</strong></td><td><xsl:value-of select="DESTSITE/@GLOBAL"/></td>
+					</tr><tr>	<td><strong>Published URL</strong></td><td><xsl:value-of select="DESTSITE/@BASEURL"/></td>
+					</tr><tr>	<td><strong>Published Path</strong></td><td><xsl:value-of select="DESTSITE/@PUB_PATH"/></td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Editions</h3>
+		</xsl:if>
+		<br/>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td><strong>Name</strong></td>
+					<td colspan="2"><strong>Value</strong></td>
+				</tr>
+				<tr>
+					<td>Edition Name</td>
+					<td colspan="2"><xsl:value-of select="DISPLAYTITLE"/></td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td colspan="2"><xsl:value-of select="EDITIONCOMMENT"/></td>
+				</tr>
+
+				<tr>
+					<td>Destination Site</td>
+					<td colspan="2"><xsl:value-of select="DESTSITE/@NAME"/></td>
+				</tr>
+
+				<tr>
+					<td>Edition Type</td>
+					<td colspan="2">					<xsl:choose>
+						<xsl:when test="EDITIONTYPE='1'">Manual</xsl:when>
+						<xsl:when test="EDITIONTYPE='2'">Publish</xsl:when>
+						<xsl:when test="EDITIONTYPE='3'">Recovery</xsl:when>
+						<xsl:when test="EDITIONTYPE='5'">Unpublish Then Publish</xsl:when>
+					</xsl:choose>
+					</td>
+				</tr>
+
+				<tr>
+					<td><strong>Content List Name</strong></td>
+					<td><strong>Delivery Context</strong></td>
+					<td><strong>Assembly Context</strong></td>
+				</tr>
+
+	<xsl:apply-templates select="CONTENTLISTS"/>
+
+			</tbody>
+		</table>
+			</xsl:template>
+	<xsl:template match="CONTENTLISTS">
+		<tr>
+			<td><xsl:value-of select="@NAME"/></td>
+			
+<td>
+	<xsl:value-of select="@CONTEXT"/>
+	
+</td>
+<td>
+	<xsl:value-of select="@ASSEMBLY_CONTEXT"/>
+	
+</td>
+
+		</tr>
+	</xsl:template>
+</xsl:stylesheet>

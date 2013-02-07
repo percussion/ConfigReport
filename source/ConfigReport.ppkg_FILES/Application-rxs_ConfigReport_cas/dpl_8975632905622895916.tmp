@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<sites>
+			<xsl:apply-templates select="/*/RXSITES"/>
+		</sites>
+	</xsl:template>
+	<xsl:template match="RXSITES">
+		<site>
+		<name><xsl:value-of select="SITENAME"/></name>
+		
+				<description>
+					
+					<xsl:value-of select="SITEDESC"/>
+				</description>
+
+				<siteaddress>
+					<xsl:value-of select="BASEURL"/>
+				</siteaddress>
+
+				<rootlocation>
+					<xsl:value-of select="ROOT"/>
+				</rootlocation>
+
+				<publisher>
+					<xsl:value-of select="PUBLISHER/@NAME"/>
+				</publisher>
+
+				<folderroot>
+					<xsl:value-of select="FOLDER_ROOT"/>
+				</folderroot>
+
+				<globaltemplate>
+					<xsl:value-of select="GLOBALTEMPLATE"/>
+				</globaltemplate>
+		</site>
+	</xsl:template>
+</xsl:stylesheet>

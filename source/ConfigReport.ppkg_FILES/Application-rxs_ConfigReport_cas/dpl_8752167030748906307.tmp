@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT variant (#PCDATA)>
+<!ATTLIST  variant name CDATA #IMPLIED>
+<!ATTLIST  variant id CDATA #IMPLIED>
+<!ELEMENT allowedvariants (variant* )>
+<!ELEMENT slot (allowedvariants )>
+<!ELEMENT slot_report (slot* )>

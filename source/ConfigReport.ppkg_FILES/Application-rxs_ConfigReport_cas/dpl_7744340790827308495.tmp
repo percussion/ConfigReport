@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT variant EMPTY>
+<!ATTLIST  variant id CDATA #REQUIRED>
+<!ATTLIST  variant name CDATA #REQUIRED>
+<!ELEMENT contenttype (variant* )>
+<!ATTLIST  contenttype id CDATA #REQUIRED>
+<!ATTLIST  contenttype name CDATA #REQUIRED>
+<!ATTLIST  contenttype description CDATA #REQUIRED>
+<!ELEMENT contenttypes (contenttype* )>
+<!ELEMENT ctvariantroot (contenttypes* )>

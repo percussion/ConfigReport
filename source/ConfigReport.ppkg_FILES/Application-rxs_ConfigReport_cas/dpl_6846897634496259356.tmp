@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+   <head>
+      <title>Full Report</title>
+      <link href="inphecthyuz.css" rel="StyleSheet" type="text/css"/>
+      <style type="text/css">
+div.tranlabel
+{
+    COLOR: #008000;
+    FONT-FAMILY: 'sans-serif';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    POSITION:absolute;
+    Z-INDEX: 1
+   
+}
+
+div.wfbox
+{
+   position:relative;
+}
+
+
+div.wfbox table {
+	border-spacing:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#FFFFFF;
+	color: #FFFFFF;
+}
+
+div.wfbox table td a:link, div.wfbox table td a:visited {
+
+}
+
+ div.wfbox tbody th a:link, div.wfbox tbody th a:visited{
+	color:#000000;
+	background:none;
+	padding:0px 0px 0px 0px;
+}
+
+div.wfbox thead th {
+	text-align: center;
+	background: none;
+	color: #000000;
+	border: none;
+	text-transform:none;
+}
+
+div.wfbox tbody tr.odd 	{
+	background: #ffffff;
+	border-top:1px solid #FFF;
+}
+
+div.wfbox tbody tr		{
+	background-color:#FFFFFF; 
+	text-align:left;
+	border: none;
+	} 
+
+a.workflow
+{
+    COLOR: #000000;
+}
+
+a.state
+{
+    COLOR: #CC0000;
+}
+
+a.transition
+{
+    COLOR: #CC0000;
+}
+</style>
+   </head>
+   <body>
+      <div class="landscape pagebreak"/>
+      <h2>Nav Image
+					
+
+						(rffNavImage)
+					
+				</h2>
+      <p>A binary image file used in Managed Navigation.</p>
+      <h3>Access Control</h3>
+      <table border="1">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>Data Create</th>
+               <th>Data Delete</th>
+               <th>Data Query</th>
+               <th>Data Update</th>
+               <th>Design Delete</th>
+               <th>Design Read</th>
+               <th>Design Update</th>
+               <th>Modify ACL</th>
+            </tr>
+            <tr>
+               <td>Anonymous</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <td>Default</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Editor</h3>
+      <table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						This field cannot be empty and must be unique within the folder.
+					 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					Java/global/percussion/generic/sys_DateFormat(
+								'yyyy-MM-dd'
+							, 
+								''
+							)
+				 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg 
+			</td>
+               <td>Active Image:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+												
+													activeimg_type
+												
+											 IS NOT NULL 
+												''
+											 AND<br/>
+		Error:
+										This field cannot be empty
+									 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_filename 
+			</td>
+               <td>Active Image File Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_size 
+			</td>
+               <td>Active Image Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_type 
+			</td>
+               <td>Active Image Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_ext 
+			</td>
+               <td>Active Image Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_height 
+			</td>
+               <td>Active Image Height:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>activeimg_width 
+			</td>
+               <td>Active Image Width:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg 
+			</td>
+               <td>Inactive Image:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_filename 
+			</td>
+               <td>Inactive Image File Name:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td> 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_size 
+			</td>
+               <td>Inactive Image Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_type 
+			</td>
+               <td>Inactive Image Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td> 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_ext 
+			</td>
+               <td>Inactive Image Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_height 
+			</td>
+               <td>Inactive Image Height:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td> 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>inactiveimg_width 
+			</td>
+               <td>Inactive Image Width:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td> 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg 
+			</td>
+               <td>Rollover Image:
+			 
+			</td>
+               <td>sys_File 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+												
+													rolloverimg_type
+												
+											 IS NOT NULL 
+												''
+											 AND<br/>
+		Error:
+										This field cannot be empty
+									 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_filename 
+			</td>
+               <td>Rollover Image Filename:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_size 
+			</td>
+               <td>Rollover Image Size:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_type 
+			</td>
+               <td>Rollover Image Type:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_ext 
+			</td>
+               <td>Rollover Image Extension:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_height 
+			</td>
+               <td>Rollover Image Height:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>rolloverimg_width 
+			</td>
+               <td>Rollover Image Width:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>selector 
+			</td>
+               <td>Image Selector:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(RXLOOKUP: FF_NavImageSelector)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_community
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_lang
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+      <h3>Workflow</h3>
+      <p>This content type will use "Simple Workflow" by default
+		</p>
+      <p>The following workflows are also allowed</p>
+      <ul>
+         <li>Simple Workflow</li>
+         <li>Standard Workflow</li>
+      </ul>
+      <h3>Templates</h3>
+      <table border="1" width="100%">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Label</th>
+               <th>Description</th>
+               <th>Slots</th>
+            </tr>
+            <tr>
+               <td>rffSnNavImageLink </td>
+               <td>S - Nav Image Link </td>
+               <td>Place holder for nav_image relationships </td>
+               <td> 
+				</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Java Exits</h3>
+      <h4>Pre Exits</h4>
+      <ul>
+         <li>Java/global/percussion/generic/sys_FileInfo()</li>
+         <li>Java/global/percussion/exit/sys_imageInfoExtractor()</li>
+         <li>Java/global/percussion/extensions/general/sys_NullIf(
+									'0'
+								, 
+									'selector'
+								, 
+									''
+								, 
+									''
+								, 
+									''
+								, 
+									''
+								)</li>
+      </ul>
+      <h3>Location Schemes</h3>
+      <table border="1">
+         <tr>
+            <th>Location name</th>
+            <th>Location description</th>
+            <th>Template</th>
+            <th>Generator</th>
+            <th>Parameters</th>
+         </tr>
+         <tr>
+            <td>InactiveNavImage</td>
+            <td>Inactive navigation image url</td>
+            <td>rffBnInactiveImage</td>
+            <td>sys_JexlAssemblyLocation</td>
+            <td>expression=if ($sys.crossSiteLink) {$prefix = $sys.site.url;} else {$prefix = $sys.variables.rxs_urlroot;} $prefix + $sys.pub_path + $sys.template.prefix + 'item' + $sys.item.getProperty('rx:sys_contentid').String  +
+$rx.location.getFirstDefined($sys.item,'rx:inactiveimg_ext,rx:sys_suffix', '.gif') (String)</td>
+         </tr>
+         <tr>
+            <td>RolloverNavImage</td>
+            <td>Rollover navigation image url</td>
+            <td>rffBnRolloverImage</td>
+            <td>sys_JexlAssemblyLocation</td>
+            <td>expression=if ($sys.crossSiteLink) {$prefix = $sys.site.url;} else {$prefix = $sys.variables.rxs_urlroot;} $prefix + $sys.pub_path + $sys.template.prefix + 'item' + $sys.item.getProperty('rx:sys_contentid').String  +
+$rx.location.getFirstDefined($sys.item,'rx:rolloverimg_ext,rx:sys_suffix', '.gif') (String)</td>
+         </tr>
+         <tr>
+            <td>InactiveNavImage</td>
+            <td>Inactive navigation image publishing location</td>
+            <td>rffBnInactiveImage</td>
+            <td>sys_JexlAssemblyLocation</td>
+            <td>expression=$sys.pub_path + $sys.template.prefix + 'item' + $sys.item.getProperty('rx:sys_contentid').String  +
+$rx.location.getFirstDefined($sys.item,'rx:inactiveimg_ext,rx:sys_suffix', '.gif') (String)</td>
+         </tr>
+         <tr>
+            <td>RolloverNavImage</td>
+            <td>Publishing location for the rollover navigation image</td>
+            <td>rffBnRolloverImage</td>
+            <td>sys_JexlAssemblyLocation</td>
+            <td>expression=$sys.pub_path + $sys.template.prefix + 'item' + $sys.item.getProperty('rx:sys_contentid').String  +
+$rx.location.getFirstDefined($sys.item,'rx:rolloverimg_ext,rx:sys_suffix', '.gif') (String)</td>
+         </tr>
+      </table>
+      <div class="landscape pagebreak"/>
+      <h2>Navon
+					
+
+						(rffNavon)
+					
+				</h2>
+      <p>Content Type for basic Managed Navigation Content Items.</p>
+      <h3>Access Control</h3>
+      <table border="1">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>Data Create</th>
+               <th>Data Delete</th>
+               <th>Data Query</th>
+               <th>Data Update</th>
+               <th>Design Delete</th>
+               <th>Design Read</th>
+               <th>Design Update</th>
+               <th>Modify ACL</th>
+            </tr>
+            <tr>
+               <td>Anonymous</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <td>Default</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Editor</h3>
+      <table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						This field cannot be empty and must be unique within the folder.
+					 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					Java/global/percussion/generic/sys_DateFormat(
+								'yyyy-MM-dd'
+							, 
+								''
+							)
+				 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_propagate 
+			</td>
+               <td>Propagate:
+			 
+			</td>
+               <td>sys_SingleCheckBox
+										
+											Yes
+											1
+										
+									 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>
+												PSXSingleHtmlParameter/sys_contentid
+											 IS NULL 
+												'1'
+											 AND</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_selector 
+			</td>
+               <td>Image Selector:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(RXLOOKUP: FF_NavImageSelector)
+	 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_variable 
+			</td>
+               <td>Variable Selector:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../rxs_navSupport/VarSelector)
+	 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_community
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_lang
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+      <h3>Workflow</h3>
+      <p>This content type will use "Simple Workflow" by default
+		</p>
+      <p>The following workflows are also allowed</p>
+      <ul>
+         <li>Simple Workflow</li>
+         <li>Standard Workflow</li>
+      </ul>
+      <h3>Templates</h3>
+      <table border="1" width="100%">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Label</th>
+               <th>Description</th>
+               <th>Slots</th>
+            </tr>
+            <tr>
+               <td>rffSnCiNavBottom </td>
+               <td>S - CI Nav Bottom </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnCiNavBreadcrumbs </td>
+               <td>S - CI Nav Breadcrumbs </td>
+               <td>Renders the breadcrumbs </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnCiNavHomeImage </td>
+               <td>S - CI Nav Home Image </td>
+               <td>Displays the Home Image </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnCiNavTop </td>
+               <td>S - CI Top Nav </td>
+               <td>Top Menu Bar </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavBottom </td>
+               <td>S - EI Nav Bottom </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavBreadcrumbs </td>
+               <td>S - EI Nav Breadcrumbs </td>
+               <td>Renders the breadcrumbs </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavLeft </td>
+               <td>S - EI Nav Left </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavTop </td>
+               <td>S - EI Nav Top </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavHomeImage </td>
+               <td>S - Nav Home Image </td>
+               <td>Place holder for nav_home_image relationships </td>
+               <td>
+                  <ul>
+                     <li>rffHomeImage</li>
+                  </ul> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavPreload </td>
+               <td>S - Nav Preload </td>
+               <td>Javascript preload images function </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavTopDescendant </td>
+               <td>S - Nav Top Descendant </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavonLink </td>
+               <td>S - Navon Link </td>
+               <td>shows navon link </td>
+               <td>
+                  <ul>
+                     <li>rffNavImage</li>
+                     <li>rffNavLandingPage</li>
+                     <li>rffNavSubmenu</li>
+                  </ul> 
+				</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Java Exits</h3>
+      <h4>Pre Exits</h4>
+      <ul>
+         <li>Java/global/percussion/extensions/general/sys_NullIf(
+									'0'
+								, 
+									'no_selector'
+								, 
+									'no_variable'
+								, 
+									''
+								, 
+									''
+								, 
+									''
+								)</li>
+      </ul>
+      <h3>Location Schemes</h3>
+      <p>There are no location schemes for this content type.</p>
+      <div class="landscape pagebreak"/>
+      <h2>NavTree
+					
+
+						(rffNavTree)
+					
+				</h2>
+      <p>Managed Navigation Content Item used in the root Folder of a Site.  The Site root Folder must contain a NavTree Content Item for Managed Navigation to work.</p>
+      <h3>Access Control</h3>
+      <table border="1">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>Data Create</th>
+               <th>Data Delete</th>
+               <th>Data Query</th>
+               <th>Data Update</th>
+               <th>Design Delete</th>
+               <th>Design Read</th>
+               <th>Design Update</th>
+               <th>Modify ACL</th>
+            </tr>
+            <tr>
+               <td>Anonymous</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <td>Default</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Editor</h3>
+      <table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						This field cannot be empty and must be unique within the folder.
+					 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					Java/global/percussion/generic/sys_DateFormat(
+								'yyyy-MM-dd'
+							, 
+								''
+							)
+				 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>nt_theme 
+			</td>
+               <td>Theme:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(RXLOOKUP: FF_Nav_Theme)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+												
+													nt_theme
+												
+											 IS NOT NULL 
+												''
+											 AND<br/>
+		Error:
+										Theme field cannot be empty
+									 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_propagate 
+			</td>
+               <td>Propagate:
+			 
+			</td>
+               <td>sys_SingleCheckBox
+										
+											Yes
+											1
+										
+									 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>
+												PSXSingleHtmlParameter/sys_contentid
+											 IS NULL 
+												'1'
+											 AND</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_selector 
+			</td>
+               <td>Image Selector:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(RXLOOKUP: FF_NavImageSelector)
+	 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>no_variable 
+			</td>
+               <td>Variable Selector:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../rxs_navSupport/VarSelector)
+	 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_community
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+						User/SessionObject/sys_lang
+					
+				 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+      <h3>Workflow</h3>
+      <p>This content type will use "Simple Workflow" by default
+		</p>
+      <p>The following workflows are also allowed</p>
+      <ul>
+         <li>Simple Workflow</li>
+         <li>Standard Workflow</li>
+      </ul>
+      <h3>Templates</h3>
+      <table border="1" width="100%">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Label</th>
+               <th>Description</th>
+               <th>Slots</th>
+            </tr>
+            <tr>
+               <td>rffSnCiNavBottom </td>
+               <td>S - CI Nav Bottom </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnCiNavBreadcrumbs </td>
+               <td>S - CI Nav Breadcrumbs </td>
+               <td>Renders the breadcrumbs </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnCiNavTop </td>
+               <td>S - CI Top Nav </td>
+               <td>Top Menu Bar </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavBottom </td>
+               <td>S - EI Nav Bottom </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavBreadcrumbs </td>
+               <td>S - EI Nav Breadcrumbs </td>
+               <td>Renders the breadcrumbs </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavLeft </td>
+               <td>S - EI Nav Left </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnEiNavTop </td>
+               <td>S - EI Nav Top </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavPreload </td>
+               <td>S - Nav Preload </td>
+               <td>Javascript preload images function </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavTopDescendant </td>
+               <td>S - Nav Top Descendant </td>
+               <td>Renders the top nav </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>rffSnNavonLink </td>
+               <td>S - Navon Link </td>
+               <td>shows navon link </td>
+               <td>
+                  <ul>
+                     <li>rffNavImage</li>
+                     <li>rffNavLandingPage</li>
+                     <li>rffNavSubmenu</li>
+                  </ul> 
+				</td>
+            </tr>
+         </tbody>
+      </table>
+      <h3>Java Exits</h3>
+      <h4>Pre Exits</h4>
+      <ul>
+         <li>Java/global/percussion/extensions/general/sys_NullIf(
+									'0'
+								, 
+									'no_selector'
+								, 
+									'no_variable'
+								, 
+									''
+								, 
+									''
+								, 
+									''
+								)</li>
+      </ul>
+      <h3>Location Schemes</h3>
+      <p>There are no location schemes for this content type.</p>
+   </body>
+</html>

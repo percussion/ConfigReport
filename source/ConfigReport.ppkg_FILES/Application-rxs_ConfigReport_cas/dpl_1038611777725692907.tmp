@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+   <head>
+      <title>variants</title>
+   </head>
+   <body>
+      <h2>Content types and Templates by Community</h2>
+      <table border="1">
+         <th/>
+         <tr>
+            <td>
+               <strong>rffNavImage</strong>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <strong>rffNavon</strong>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <strong>rffNavTree</strong>
+            </td>
+         </tr>
+      </table>
+      <h2>Workflows by Community</h2>
+      <table border="1">
+         <th/>
+         <tr>
+            <td>
+               <strong>Simple Workflow</strong>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <strong>Standard Workflow</strong>
+            </td>
+         </tr>
+      </table>
+      <h2>Sites by Community</h2>
+      <table border="1">
+         <th/>
+      </table>
+   </body>
+</html>

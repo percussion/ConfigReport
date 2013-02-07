@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT community (contenttype*, roles?, sites? )>
+<!ELEMENT site EMPTY>
+<!ATTLIST  site id CDATA #REQUIRED>
+<!ATTLIST  site name CDATA #REQUIRED>
+<!ATTLIST  site description CDATA #REQUIRED>
+<!ELEMENT sites (site* )>
+<!ELEMENT role EMPTY>
+<!ELEMENT roles (role* )>
+<!ELEMENT variant EMPTY>
+<!ATTLIST  variant name CDATA #REQUIRED>
+<!ATTLIST  variant id CDATA #REQUIRED>
+<!ELEMENT contenttype (variant* )>
+<!ATTLIST  contenttype name CDATA #REQUIRED>
+<!ATTLIST  contenttype id CDATA #REQUIRED>
+<!ATTLIST  community name CDATA #REQUIRED>
+<!ATTLIST  community id CDATA #REQUIRED>
+<!ELEMENT communities (community* )>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h2>Slots</h2>
+<table border="1" width="100%">
+   <tbody>
+      <tr>
+         <th>Name</th>
+         <th>Label</th>
+         <th>Description</th>
+         <th>Allowed Type (Template)</th>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffHome : rffPgCiHome</li>
+               <li>rffPressRelease : rffPgCiPressRelease</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavSubmenu </td>
+         <td>Nav Submenu </td>
+         <td>submenu slot for managed nav </td>
+         <td>
+            <ul>
+               <li>rffNavon : rffSnNavonLink</li>
+               <li>rffNavTree : rffSnNavonLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffPgCiGeneric</li>
+               <li>rffGenericWord : rffPgCiGeneric</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffSnTitleCalloutAndMoreLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffImage : rffSnFlash</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffFile : rffBnBinary</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavImage </td>
+         <td>Nav Image </td>
+         <td>navigation image for rollovers </td>
+         <td>
+            <ul>
+               <li>rffNavImage : rffSnNavImageLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffPgCiEvent</li>
+               <li>rffGenericWord : rffPgCiGenericWord</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffAutoIndex : rffSnAutoList</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavSubmenu </td>
+         <td>Nav Submenu </td>
+         <td>submenu slot for managed nav </td>
+         <td>
+            <ul>
+               <li>rffExternalLink : rffSnLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffExternalLink : rffSnLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffExternalLink : rffSnLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffPgEiEvent</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffSnDateRange</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_image </td>
+         <td>Inline Image Slot </td>
+         <td>System slot for the inline images </td>
+         <td>
+            <ul>
+               <li>rffImage : rffBnImage</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffPgEiGeneric</li>
+               <li>rffGenericWord : rffPgEiGeneric</li>
+               <li>rffImage : rffBnImage</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffCalendar : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffCalendar : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffFile : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffFile : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffGenericWord : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGenericWord : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffHome : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffHome : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNavLandingPage </td>
+         <td>Nav Landing Page </td>
+         <td>landing page for nav </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffSnTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGenericWord : rffSnImageLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffSnImageLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGenericWord : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffCalendar : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffBrief : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffGeneric : rffSnCallout</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffEvent : rffSnTitleWithDate</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffImage : rffSnImageAndTitle</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffImage : rffSnImage</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffContacts : rffSnNameAndEmail</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffContacts : rffSnNameAndAddress</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffSnHome</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffPgEiPressRelease</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffPressRelease : rffSnDateAndTitleLink</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_link </td>
+         <td>Inline Link Slot </td>
+         <td>System slot for inline links </td>
+         <td>
+            <ul>
+               <li>rffCalendar : rffPgCalendarMonth</li>
+               <li>rffHome : rffPgEiHome</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>sys_inline_variant </td>
+         <td>Inline Variant Slot </td>
+         <td>System slot for the inline variants </td>
+         <td>
+            <ul>
+               <li>rffAutoIndex : rffSnAutoBulletList</li>
+            </ul>	 
+					</td>
+      </tr>
+      <tr>
+         <td>rffNav </td>
+         <td>Managed Nav Slot </td>
+         <td>Managed navigation slot, which is used to render all navs </td>
+         <td>	 
+					</td>
+      </tr>
+   </tbody>
+</table>

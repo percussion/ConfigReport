@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:saxon="http://icl.com/saxon"       extension-element-prefixes="saxon">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:variable name="setup" select="document(/*/@setup)/*/root/setup"/>
+	<xsl:variable name="applications" select="/*/@applications"/>
+	<xsl:template match="/">
+	<saxon:output href="rxs_ConfigReport_cas/reports/full_report.html">
+	
+		<html>
+			<head>
+				<title>variants</title>
+			</head>
+			<body>
+				<xsl:apply-templates select="/registrations/contenttype[not(starts-with(@name,'_'))]">
+					<xsl:sort order="ascending" select="@name"/>		
+				</xsl:apply-templates>
+			</body>
+		</html>
+		</saxon:output>	
+			<saxon:output href="rxs_ConfigReport_cas/reports/full_report.xml">
+			<xsl:copy-of select="/"/>
+		</saxon:output>	
+		<saxon:output href="rxs_ConfigReport_cas/reports/variant_community.html">
+			<xsl:copy-of select="document(/*/@variantcommunityurl)/*"/>
+	</saxon:output>	
+	<saxon:output href="rxs_ConfigReport_cas/reports/roles_by_community.xml">
+			<xsl:copy-of select="document(/*/@rolesbycommunity)/*"/>
+	</saxon:output>	
+		<saxon:output href="rxs_ConfigReport_cas/reports/slotreporturl.xml">
+			<xsl:copy-of select="document(/*/@slotreporturl)/*"/>
+	</saxon:output>	
+
+		<xsl:for-each select="$setup/app">
+			<saxon:output href="rxs_ConfigReport_cas/reports/{.}_app.html">
+				<xsl:variable name="filename" select="concat('ObjectStore\',.,'.xml')"/>	
+					<xsl:copy-of select="document(concat($applications,'&amp;ctxml=',$filename))/*"/>
+			</saxon:output>
+		</xsl:for-each>	
+		
+			<html>
+			<head>
+				<title>variants</title>
+			</head>
+			<body>
+	
+	
+				<xsl:apply-templates select="/registrations/contenttype[not(starts-with(@name,'_'))]">
+					<xsl:sort order="ascending" select="@name"/>		
+				</xsl:apply-templates>
+
+			
+			</body>
+		</html>
+		</xsl:template>
+		
+		<xsl:template match="contenttype">
+		<xsl:variable name="fileout" select="concat('rxs_ConfigReport_cas/reports/',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'_ct.html')"/>		
+			<saxon:output href="{$fileout}">
+			<h1><xsl:value-of select="@name"	/></h1>
+			<h2>Content Editor</h2>
+			<xsl:variable name="ctosfile" select="concat('ObjectStore\',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'.xml')"	></xsl:variable>	
+			<xsl:variable name="filename" select="concat(/registrations/@contenttypeurl,'&amp;ctxml=',$ctosfile)"/>
+		
+			<xsl:copy-of select="document($filename)/*/body/*"/>
+			<h2>Templates</h2>
+				<xsl:if test="variant">
+				<table border="1"	width="100%">
+					<tbody>
+						<xsl:apply-templates select="variant[@outputformat='1']"/>
+						<xsl:apply-templates select="variant[@outputformat='2']"/>
+					</tbody>
+				</table>
+				</xsl:if>
+				
+				<h2>Slots</h2>
+				<xsl:if test="variant/slot">
+					<table border="1" width="100%">
+					<tbody>
+						<xsl:apply-templates select="/*/slot[@slotid=current()/variant/slot/@slotid]" mode="mainslot"/>
+					</tbody>
+				</table>
+				</xsl:if>
+				</saxon:output>
+				<h1><xsl:value-of select="@name"	/></h1>
+			<h2>Content Editor</h2>
+			<xsl:variable name="ctosfile" select="concat('ObjectStore\',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'.xml')"	></xsl:variable>	
+			<xsl:variable name="filename" select="concat(/registrations/@contenttypeurl,'&amp;ctxml=',$ctosfile)"/>
+		
+			<xsl:copy-of select="document($filename)/*/body/*"/>
+			<h2>Templates</h2>
+				<xsl:if test="variant">
+				<table border="1"	width="100%">
+					<tbody>
+						<xsl:apply-templates select="variant[@outputformat='1']"/>
+						<xsl:apply-templates select="variant[@outputformat='2']"/>
+					</tbody>
+				</table>
+				</xsl:if>
+				
+				<h2>Slots</h2>
+				<xsl:if test="variant/slot">
+					<table border="1" width="100%">
+					<tbody>
+						<xsl:apply-templates select="/*/slot[@slotid=current()/variant/slot/@slotid]" mode="mainslot"/>
+					</tbody>
+				</table>
+				</xsl:if>
+		</xsl:template>	
+		
+		<xsl:template match="variant">
+			<tr>
+				<td><xsl:value-of select="@name"/></td>
+				<td><xsl:value-of select="@description"/></td>
+				<td>
+					<xsl:if test="slot">
+						<ul>
+						<xsl:apply-templates select="slot">
+							<xsl:sort order="ascending" select="@slotname"/>			
+						</xsl:apply-templates>
+						</ul>	
+					</xsl:if>
+				</td>
+			</tr>
+		</xsl:template>	
+		<xsl:template match="slot">
+				<li><xsl:value-of select="@slotname"/></li>
+		</xsl:template>
+		
+		<xsl:template match="slot" mode="mainslot"	>
+				<tr>
+					<td><xsl:value-of select="@slotname"/></td>
+					<td><xsl:value-of select="@slotdesc"/></td>
+					<td>
+						<xsl:if test="allowedvariants/variant">
+							<ul>
+							<xsl:apply-templates select="allowedvariants/variant">
+									<xsl:sort select="concat(@contenttype,@name)" order="ascending"/>		
+							</xsl:apply-templates>
+								</ul>
+						</xsl:if>	
+					</td>
+				</tr>
+		</xsl:template>
+		
+		<xsl:template match="allowedvariants/variant">
+			<li><xsl:value-of select="@contenttype"/><xsl:text> : </xsl:text><xsl:value-of select="@name"/></li>
+		</xsl:template>		
+</xsl:stylesheet>

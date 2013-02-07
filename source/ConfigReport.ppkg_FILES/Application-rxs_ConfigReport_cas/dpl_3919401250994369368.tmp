@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT variant EMPTY>
+<!ATTLIST  variant id CDATA #REQUIRED>
+<!ATTLIST  variant name CDATA #REQUIRED>
+<!ELEMENT contenttype (variant* )>
+<!ATTLIST  contenttype id CDATA #REQUIRED>
+<!ATTLIST  contenttype name CDATA #REQUIRED>
+<!ELEMENT community (contenttype* )>
+<!ATTLIST  community id CDATA #REQUIRED>
+<!ATTLIST  community name CDATA #REQUIRED>
+<!ELEMENT variantregistrations (community* )>

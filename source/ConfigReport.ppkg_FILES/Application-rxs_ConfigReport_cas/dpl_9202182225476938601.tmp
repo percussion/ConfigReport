@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
+	<xsl:key name="ctvariant" match="variant" use="concat(../@name,@name)"/>
+	<xsl:key name="ctcommunity" match="community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))]" use="@name"/>
+	<xsl:key name="ct" match="contenttype" use="@name"/>
+	<xsl:key name="wf" match="workflow" use="@name"/>
+	<xsl:key name="sites" match="sites" use="@name"/>
+	<xsl:template match="/">
+		<html>  
+			<head>
+				<title>variants</title>
+			</head>
+			<body>
+				<h2>Content types and Templates by Community</h2>
+				<table border="1">
+					<th>
+						<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+							
+							<td>
+								<xsl:value-of select="@name"/>
+							</td>
+						</xsl:for-each>
+					</th>
+					<xsl:for-each select="/*/site/community/contenttype[count(. | key('ct', @name)[1]) = 1][not(starts-with(@name,'_') or starts-with(@name,'rff')) or @name='rffNavon' or @name='rffNavImage' or @name='rffNavTree' ]">
+						<xsl:sort select="@name"/>
+						<xsl:variable name="contenttype" select="@name"/> 
+						<tr>
+							<td>
+								<strong><xsl:value-of select="@name"/></strong>
+							</td>
+							<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td align="center">
+
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype and string-length(@ct)&gt;0]">	<strong>x</strong></xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+						</tr>
+						<xsl:for-each select="/*/site/community/contenttype[@name=$contenttype]/variant[count(. | key('ctvariant', concat($contenttype,@name))[1]) = 1][not(starts-with(@name,'rff'))]">
+							<xsl:sort select="@name"/>
+							<xsl:variable name="variant" select="@name"/>		
+								<tr>
+								<td>
+									<xsl:value-of select="@name"/> (<xsl:value-of select="@label"/>)
+								</td>
+								<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td align="center">
+									<xsl:choose>
+										<xsl:when test="contenttype[@name=$contenttype]/variant[@name=$variant and string-length(@var)&gt;0]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+								</tr>
+							</xsl:for-each>
+					</xsl:for-each>
+				</table>
+				<h2>Workflows by Community</h2>
+				<table border="1">
+					<th>
+						<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+							
+							<td>
+								<xsl:value-of select="@name"/>
+							</td>
+						</xsl:for-each>
+					</th>
+					
+				<xsl:for-each select="/*/site/community/workflow[count(. | key('wf', @name)[1]) = 1][not(starts-with(@name,'_')) ]">
+						<xsl:sort select="@name"/>
+						<xsl:variable name="workflow" select="@name"/> 
+						<tr>
+							<td>
+								<strong><xsl:value-of select="@name"/></strong>
+							</td>
+							<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td align="center">
+
+									<xsl:choose>
+										<xsl:when test="/*/site/community[@id=current()/@id]/workflow[@name=$workflow]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+						</tr>
+						</xsl:for-each>
+
+				</table>
+				
+					<h2>Sites by Community</h2>
+				<table border="1">
+					<th>
+						<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+							
+							<td>
+								<xsl:value-of select="@name"/>
+							</td>
+						</xsl:for-each>
+					</th>
+					
+				<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))]/sites[count(. | key('wf', @name)[1]) = 1][not(starts-with(@name,'_')) ]">
+						<xsl:sort select="@name"/>
+						<xsl:variable name="sites" select="@name"/> 
+						<tr>
+							<td>
+								<strong><xsl:value-of select="@name"/></strong>
+							</td>
+							<xsl:for-each select="/*/site/community[not(@name='Default' or starts-with(@name,'Enterprise_Investments') or starts-with(@name,'Corporate_Investments'))][count(. | key('ctcommunity', @name)[1]) = 1][not(starts-with(@name,'_'))]">
+								<td align="center">
+
+									<xsl:choose>
+										<xsl:when test="/*/site/community[@id=current()/@id]/sites[@name=$sites]">x</xsl:when>
+										<xsl:otherwise>&#160;</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</xsl:for-each>
+						</tr>
+						</xsl:for-each>
+
+				</table>
+
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>
