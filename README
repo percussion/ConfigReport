@@ -5,5 +5,54 @@ Generates detailed reports on design objects and implementation details.
 To create the package archive run ant in the Config Report directory. This will
 generate the package file in the dist/ConfigReport.ppkg location.
 
+To build the package locally:
+
+cd projects
+git clone https://github.com/percussion/ConfigReport.git
+cd ConfigReport
+ant
+
+
 This version of the package will install on any 7.x version of Rhythmyx/CM System.
+
+The package can be installed into a CM System instance using the Percussion Package Installer.
+http://help.percussion.com/Assets/cmsystem/7_0_3/Installing_and_Maintaining_Packages_for_Percussion_CM_System_Ver_7_0_3.pdf
+
+
+Post Installation
+
+To run the report: http://server:port/Rhythmyx/rxs_ConfigReport_cas/full_report.html
+
+
+To configure Shared Fields:
+Using the Percussion Workbench,
+
+In the XML Server View / Applications / open rxs_ConfigReport_cas and find the application_report query resource.
+
+Open the mapper and make sure there is an entry for each shared field file you have.
+
+The name of the element is not important but remember it for the next stage.
+
+You can remove any that are not needed.
+     DevRxMaster_RXDUAL/SHARED maps to the rxs_ct_shared.xml file.
+
+Keep the SYSTEM and CE entries.
+
+It does not matter if you have extras here.
+
+View the exits on the application_report query resource.  Make sure
+there is one and only one sys_xdFileToTree exit for each shared field file (not group) that
+exists on the server.  (SYSTEM and CE should also exist).  
+
+The fileName parameter should be specified as rxconfig\Server\ContentEditors\shared\{the filename}.xml
+The destinationNode is the node you created in the mapper.
+
+Make sure you remove any that do not exist on your implementation.  e.g. DEMO, JUMPSTART, NWI_SHARED, RSS
+
+On the Rhythmyx Server, Modify the <RxRoot>/sys_wfPreviewWorkflow/previewworkflow.xsl.  Add an output method to the xsl:stylesheet node as follows:
+
+<xsl:stylesheet version="1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="psxi18n" xmlns:psxi18n="urn:www.percussion.com/i18n" >
+<xsl:output method="xml"/>  <!-- this line is added for the Config report to display the Workflows correctly. -->
+<xsl:variable name="this" select="/"/>
+<xsl:template match="/">
 
