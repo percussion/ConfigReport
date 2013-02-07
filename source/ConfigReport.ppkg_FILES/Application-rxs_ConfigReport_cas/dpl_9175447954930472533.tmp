@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+	
+	
+		<transitionroles>
+	
+		
+			
+			
+					<xsl:apply-templates select="/*/TRANSITIONROLES"/>
+			
+	
+	
+		
+		</transitionroles>
+	</xsl:template>
+	<xsl:template match="TRANSITIONROLES">
+		<transition>
+			<name><xsl:value-of select="@TRANSITIONLABEL"/></name>
+			<role><xsl:for-each select="ROLE"><xsl:value-of select="@NAME"/><xsl:if test="not(position()=last())">,</xsl:if></xsl:for-each></role>
+		</transition>
+	</xsl:template>
+</xsl:stylesheet>

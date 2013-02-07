@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Location Schemes</title>
+			</head>
+			<body>
+				<h2>Location Schemes</h2>
+				<xsl:apply-templates select="/*/RXCONTEXT"/>
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="RXCONTEXT">
+		<h3>Location schemes for <xsl:value-of select="CONTEXTNAME"/> Context</h3>
+		<p><xsl:value-of select="CONTEXTDESC"/></p>
+		
+		<h4>Default Location Scheme</h4>
+		<p>If no other location scheme matches for this context, this location scheme will be used by default.</p>
+		<xsl:apply-templates select="RXLOCATIONSCHEME[@ID=current()/DEFAULTSCHEMEID]"/>
+		<h4>Template specific location schemes</h4>
+		<xsl:apply-templates select="RXLOCATIONSCHEME[not(@ID=current()/DEFAULTSCHEMEID)]"/>
+	</xsl:template>
+	<xsl:template match="RXLOCATIONSCHEME">
+		<h4><xsl:value-of select="@SCHEMENAME"/></h4>
+
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td colspan="2"><xsl:value-of select="@SCHEMENAME"/></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td colspan="2"><xsl:value-of select="@DESCRIPTION"/></td>
+		</tr>
+
+		<tr>
+			<td>Generator</td>
+			<td colspan="2"><xsl:value-of select="@GENERATOR"/></td>
+		</tr>
+
+		<tr>
+			<td>Content Type</td>
+			<td colspan="2"><xsl:value-of select="CONTENTTYPE/@NAME"/></td>
+		</tr>
+
+		<tr>
+			<td>Template Name</td>
+			<td colspan="2"><xsl:value-of select="TEMPLATE/@NAME"/></td>
+		</tr>
+		<tr>
+			<td><strong>Name</strong></td>
+			<td><strong>Type</strong></td>
+			<td><strong>Value</strong></td>
+		</tr>
+
+		<xsl:apply-templates select="PARAMS"/>
+		
+	</table>
+	
+	</xsl:template>
+	<xsl:template match="PARAMS">
+		<tr>
+			<td><xsl:value-of select="@NAME"/></td>
+			<td><xsl:value-of select="@TYPE"/></td>
+			<td><xsl:value-of select="@VALUE"/></td>
+
+		</tr>
+		
+	</xsl:template>
+</xsl:stylesheet>

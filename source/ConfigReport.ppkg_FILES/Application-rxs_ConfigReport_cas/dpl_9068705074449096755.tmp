@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HTML>
+   <HEADER>
+      <TITLE>communities</TITLE>
+   </HEADER>
+   <BODY>
+      <TABLE BORDER="1">
+         <CAPTION>
+            <B>communities</B>
+         </CAPTION>
+         <TR>
+            <TH>community</TH>
+            <TD>
+               <TABLE BORDER="1">
+                  <TR>
+                     <TR>
+                        <TH>roles</TH>
+                        <TD>
+                           <TABLE BORDER="1">
+                              <TR>
+                                 <TH>role</TH>
+                              </TR>
+                              <TR>
+                                 <TD/>
+                              </TR>
+                           </TABLE>
+                        </TD>
+                     </TR>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR>
+            <TH>community</TH>
+            <TD>
+               <TABLE BORDER="1">
+                  <TR>
+                     <TR>
+                        <TH>roles</TH>
+                        <TD>
+                           <TABLE BORDER="1">
+                              <TR>
+                                 <TH>role</TH>
+                              </TR>
+                              <TR>
+                                 <TD/>
+                              </TR>
+                           </TABLE>
+                        </TD>
+                     </TR>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR>
+            <TH>community</TH>
+            <TD>
+               <TABLE BORDER="1">
+                  <TR>
+                     <TR>
+                        <TH>roles</TH>
+                        <TD>
+                           <TABLE BORDER="1">
+                              <TR>
+                                 <TH>role</TH>
+                                 <TH>role</TH>
+                              </TR>
+                              <TR>
+                                 <TD/>
+                                 <TD/>
+                              </TR>
+                           </TABLE>
+                        </TD>
+                     </TR>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR>
+            <TH>community</TH>
+            <TD>
+               <TABLE BORDER="1">
+                  <TR>
+                     <TR>
+                        <TH>roles</TH>
+                        <TD>
+                           <TABLE BORDER="1">
+                              <TR>
+                                 <TH>role</TH>
+                              </TR>
+                              <TR>
+                                 <TD/>
+                              </TR>
+                           </TABLE>
+                        </TD>
+                     </TR>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <TR>
+            <TH>community</TH>
+            <TD>
+               <TABLE BORDER="1">
+                  <TR>
+                     <TR>
+                        <TH>roles</TH>
+                        <TD>
+                           <TABLE BORDER="1">
+                              <TR>
+                                 <TH>role</TH>
+                              </TR>
+                              <TR>
+                                 <TD/>
+                              </TR>
+                           </TABLE>
+                        </TD>
+                     </TR>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+      </TABLE>
+      <P>
+         <CENTER>
+            <TABLE BORDER="0">
+               <TR>
+                  <TD/>
+                  <TD/>
+               </TR>
+            </TABLE>
+         </CENTER>
+      </P>
+   </BODY>
+</HTML>

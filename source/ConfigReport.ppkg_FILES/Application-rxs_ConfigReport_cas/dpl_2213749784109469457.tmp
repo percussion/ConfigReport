@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h2>FCCC Research Program Group
+					
+
+						(fccc_ResearchProgramGroup)
+					
+				</h2>
+<p>Content Type for the program group of a research area.</p>
+<h3>Access Control</h3>
+<table border="1">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>Data Create</th>
+               <th>Data Delete</th>
+               <th>Data Query</th>
+               <th>Data Update</th>
+               <th>Design Delete</th>
+               <th>Design Read</th>
+               <th>Design Update</th>
+               <th>Modify ACL</th>
+            </tr>
+            <tr>
+               <td>Anonymous</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+               <td>no</td>
+            </tr>
+            <tr>
+               <td>Default</td>
+               <td>user</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+               <td>yes</td>
+            </tr>
+         </tbody>
+      </table>
+<h3>Editor</h3>
+<table border="1">
+         <tr>
+            <th>type</th>
+            <th>Field name</th>
+            <th>Display Name</th>
+            <th>Control</th>
+            <th>Datatype</th>
+            <th>Size</th>
+            <th>Default</th>
+            <th>Visibility</th>
+            <th>Required</th>
+            <th>Field Validation</th>
+         </tr>
+         <tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_title 
+			</td>
+               <td>System Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                  <br/>
+		Error:
+						
+                  This field cannot be empty and must be unique within the folder.
+					
+                		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_communityid 
+			</td>
+               <td>Community:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communitynamelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               
+						
+                  User/SessionObject/sys_community
+					
+               
+				
+             
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_lang 
+			</td>
+               <td>Locale:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_i18nSupport/languagelookup.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               
+						
+                  User/SessionObject/sys_lang
+					
+               
+				
+             
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_currentview 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_workflowid 
+			</td>
+               <td>Workflow:
+			 
+			</td>
+               <td>sys_DropDownSingle
+	(Internal: ../sys_commSupport/communityworkflows.xml)
+	 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Hide</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_hibernateVersion 
+			</td>
+               <td>
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/displaytitle 
+			</td>
+               <td>Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>512 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td>
+                           PSXSingleHtmlParameter/displaytitle
+                         IS NOT NULL 
+                           ''
+                         AND<br/>
+		Error:
+                     DisplayTitle field cannot be empty
+                   		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>fcshared/nav_title 
+			</td>
+               <td>Nav Title:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>fcshared/page_heading 
+			</td>
+               <td>Page Heading:
+			 
+			</td>
+               <td>sys_EditBox 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentstartdate 
+			</td>
+               <td>Start Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td>datetime 	
+			</td>
+               <td> 	
+			</td>
+               <td>
+					
+               Java/global/percussion/generic/sys_DateFormat(
+								
+                        'yyyy-MM-dd'
+							
+                     , 
+								
+                        ''
+							
+                     )
+				
+             
+			</td>
+               <td>Show</td>
+               <td>required 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_contentexpirydate 
+			</td>
+               <td>Expiration Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>
+				 
+			</td>
+               <td>sys_reminderdate 
+			</td>
+               <td>Reminder Date:
+			 
+			</td>
+               <td>sys_CalendarSimple 
+			</td>
+               <td> 	
+			</td>
+               <td> 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/keywords 
+			</td>
+               <td>Keywords:
+			 
+			</td>
+               <td>sys_TextArea 
+			</td>
+               <td>text 	
+			</td>
+               <td>1024 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/description 
+			</td>
+               <td>Description:
+			 
+			</td>
+               <td>sys_TextArea 
+			</td>
+               <td>text 	
+			</td>
+               <td>1024 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/callout 
+			</td>
+               <td>Callout:
+			 
+			</td>
+               <td>sys_EditLive 
+			</td>
+               <td>text 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>shared/body 
+			</td>
+               <td>Body:
+			 
+			</td>
+               <td>sys_EditLive 
+			</td>
+               <td>text 	
+			</td>
+               <td>max 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>sh
+				 
+			</td>
+               <td>fcsharedteaser/landing_topic_teaser 
+			</td>
+               <td>Landing Topic Teaser:
+			 
+			</td>
+               <td>sys_EditLive 
+			</td>
+               <td>text 	
+			</td>
+               <td>500 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+            <tr>
+               <td>loc
+				 
+			</td>
+               <td>placeholder 
+			</td>
+               <td>Placeholder:
+			 
+			</td>
+               <td>sys_HiddenInput 
+			</td>
+               <td>text 	
+			</td>
+               <td>50 	
+			</td>
+               <td> 
+			</td>
+               <td>Show</td>
+               <td>optional 	
+			</td>
+               <td> 		
+			</td>
+            </tr>
+         </tr>
+      </table>
+<h3>Workflow</h3>
+<p>This content type will use "FCCC Standard Workflow" by default
+		</p>
+<p>The following workflows are also allowed</p>
+<ul>
+         <li>FCCC Standard Workflow</li>
+         <li>Simple Workflow</li>
+         <li>Standard Workflow</li>
+      </ul>
+<h3>Templates</h3>
+<table border="1" width="100%">
+         <tbody>
+            <tr>
+               <th>Name</th>
+               <th>Label</th>
+               <th>Description</th>
+               <th>Slots</th>
+            </tr>
+            <tr>
+               <td>fccc_Page_ResearchProgramGroup </td>
+               <td>Page - Research Program Group </td>
+               <td>Page template to render Research Program Group content type </td>
+               <td>
+                  <ul>
+                     <li>fccc_Slot_FloatImageRight</li>
+                     <li>fccc_Slot_ProgramFaculty</li>
+                     <li>fccc_Slot_SubPrograms</li>
+                     <li>rffNav</li>
+                  </ul> 
+				</td>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_FooterLink </td>
+               <td>Snippet - Footer Link </td>
+               <td>Renders the shared display title field as a link to the default page template. </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_LandingPageTeaser </td>
+               <td>Snippet - Landing Page Teaser </td>
+               <td>Renders the summary field and a read more link </td>
+               <td> 
+				</td>
+            </tr>
+            <tr>
+               <td>fccc_Snippet_UtilityLink </td>
+               <td>Snippet - Utility Link </td>
+               <td>Renders the shared display title field as a link to the default page template. </td>
+               <td> 
+				</td>
+            </tr>
+         </tbody>
+      </table>
+<h3>Java Exits</h3>
+<h4>Pre Exits</h4>
+<ul>
+         <li>Java/global/percussion/xmldom/sys_xdTextCleanup(
+                           'landing_topic_teaser'
+                        , 
+                           'rxW2Ktidy.properties'
+                        , 
+                           'rxW2KserverPageTags.xml'
+                        , 
+                           ''
+                        , 
+                           ''
+                        , 
+                           'yes'
+                        )</li>
+         <li>Java/global/percussion/xmldom/sys_xdTextCleanup(
+                           'body'
+                        , 
+                           'rxW2Ktidy.properties'
+                        , 
+                           'rxW2KserverPageTags.xml'
+                        , 
+                           ''
+                        , 
+                           ''
+                        , 
+                           'yes'
+                        )</li>
+         <li>Java/global/percussion/xmldom/sys_xdTextCleanup(
+                           'callout'
+                        , 
+                           'rxW2Ktidy.properties'
+                        , 
+                           'rxW2KserverPageTags.xml'
+                        , 
+                           ''
+                        , 
+                           ''
+                        , 
+                           'yes'
+                        )</li>
+      </ul>
+<h3>Location Schemes</h3>
+<p>There are no location schemes for this content type.</p>

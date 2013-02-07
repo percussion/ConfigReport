@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="file:rxs_ConfigReport_cas/full_report.xsl"?>
+<registrations applications="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/application_report.html?" contentlistsurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/contentlists.html?" contenttypeurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/application_report.html?" editionsurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/editions.html?" locationschemeurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/locationscheme.html?" lookupurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/lookups.html?" publisherurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/publisher.html?" rolesbycommunity="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/roles_by_community.xml?" setup="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/setup.txt?" sitesurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/sites.html?" slotreporturl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/slot_report.xml?" variantcommunityurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/ctcommunity_table.html?" variants="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/variant_regstration_report.txt?" workflowurl="http://127.0.0.1:9992/Rhythmyx/rxs_ConfigReport_cas/workflowstates.html?">
+   <contenttype ctqueryrequest="../psx_cerffAutoIndex/rffAutoIndex.html" id="301" label="Auto Index" name="rffAutoIndex">
+      <variant description="An auto index to produce bulleted list of Press Releases." id="528" label="S - Auto Bullet List" name="rffSnAutoBulletList" outputformat="2"/>
+      <variant description="An auto index to produce list of Press Releases." id="527" label="S - Auto List" name="rffSnAutoList" outputformat="2">
+         <slot slotid="502" slotname="rffAutoIndex"/>
+      </variant>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffBrief/rffBrief.html" id="302" label="Brief" name="rffBrief">
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffCalendar/rffCalendar.html" id="303" label="Calendar" name="rffCalendar">
+      <variant description="Full page calendar displaying a single month of events." id="529" label="P - Calendar Month" name="rffPgCalendarMonth" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+      </variant>
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+      <variant description="Renders a Title and callout Link" id="503" label="S - Title Callout Link" name="rffSnTitleCalloutLink" outputformat="2"/>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffContacts/rffContacts.html" id="305" label="Contacts" name="rffContacts">
+      <variant description="Name and address fields as simple text" id="518" label="S - Name and Address" name="rffSnNameAndAddress" outputformat="2"/>
+      <variant description="email address as mailto: link" id="519" label="S - Name and Email" name="rffSnNameAndEmail" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffEvent/rffEvent.html" id="306" label="Event" name="rffEvent">
+      <variant description="CI Full Page Event" id="549" label="P - CI Event" name="rffPgCiEvent" outputformat="1">
+         <slot slotid="504" slotname="rffContacts"/>
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="EI Full Page Event" id="525" label="P - EI Event" name="rffPgEiEvent" outputformat="1">
+         <slot slotid="504" slotname="rffContacts"/>
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+      <variant description="snippet used on listing of all events" id="524" label="S - Date Range" name="rffSnDateRange" outputformat="2"/>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+      <variant description="Used on the home page" id="523" label="S - Title with Date" name="rffSnTitleWithDate" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffExternalLink/rffExternalLink.html" id="308" label="External Link" name="rffExternalLink">
+      <variant description="Anchor tag with href set to url field and text set to displaytitle field" id="526" label="S - Link" name="rffSnLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffFile/rffFile.html" id="309" label="File" name="rffFile">
+      <variant description="Returns the binary stream from the binary shared group item field, setting the mime type as specified by the item_file_attachment_type field." id="533" label="B - Binary" name="rffBnBinary" outputformat="0"/>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+      <variant description="Wraps the image snippet with a link to the default page variant." id="520" label="S - Title Link and Icon" name="rffSnTitleLinkAndIcon" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffGeneric/rffGeneric.html" id="311" label="Generic" name="rffGeneric">
+      <variant description="Dispatch to the appropriate page template for the given generic item" id="555" label="D - EI Generic" name="rffDsEIGenericSelector" outputformat="1"/>
+      <variant description="Renders the shared body field" id="543" label="P - CI Generic" name="rffPgCiGeneric" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared body field" id="505" label="P - EI Generic" name="rffPgEiGeneric" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="511" slotname="rffNav"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared body field" id="554" label="P - EI Generic Category Page" name="rffPgEiGenericCategoryPage" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+      </variant>
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+      <variant description="Wraps the image snippet with a link to the default page variant." id="502" label="S - Image Link" name="rffSnImageLink" outputformat="2">
+         <slot slotid="103" slotname="sys_inline_link"/>
+      </variant>
+      <variant description="Renders a Title and callout Link" id="503" label="S - Title Callout Link" name="rffSnTitleCalloutLink" outputformat="2"/>
+      <variant description="Renders an Image, Title, callout and a more Link" id="537" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink" outputformat="2">
+         <slot slotid="508" slotname="rffImageLink"/>
+      </variant>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffGenericWord/rffGenericWord.html" id="310" label="Generic Word" name="rffGenericWord">
+      <variant description="Dispatch to the appropriate page template for the given generic item" id="555" label="D - EI Generic" name="rffDsEIGenericSelector" outputformat="1"/>
+      <variant description="Renders the shared body field" id="543" label="P - CI Generic" name="rffPgCiGeneric" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared body field" id="548" label="P - CI Generic Word" name="rffPgCiGenericWord" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared body field" id="505" label="P - EI Generic" name="rffPgEiGeneric" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="511" slotname="rffNav"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared body field" id="554" label="P - EI Generic Category Page" name="rffPgEiGenericCategoryPage" outputformat="1">
+         <slot slotid="509" slotname="rffList"/>
+      </variant>
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+      <variant description="Wraps the image snippet with a link to the default page variant." id="502" label="S - Image Link" name="rffSnImageLink" outputformat="2">
+         <slot slotid="103" slotname="sys_inline_link"/>
+      </variant>
+      <variant description="Renders a Title and callout Link" id="503" label="S - Title Callout Link" name="rffSnTitleCalloutLink" outputformat="2"/>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffHome/rffHome.html" id="312" label="Home" name="rffHome">
+      <variant description="CI Home Page template" id="545" label="P - CI Home" name="rffPgCiHome" outputformat="1">
+         <slot slotid="501" slotname="rffHomeImage"/>
+         <slot slotid="507" slotname="rffHomeList"/>
+         <slot slotid="103" slotname="sys_inline_link"/>
+      </variant>
+      <variant description="EI Home Page" id="530" label="P - EI Home" name="rffPgEiHome" outputformat="1">
+         <slot slotid="501" slotname="rffHomeImage"/>
+         <slot slotid="507" slotname="rffHomeList"/>
+         <slot slotid="103" slotname="sys_inline_link"/>
+      </variant>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffImage/rffImage.html" id="307" label="Image" name="rffImage">
+      <variant description="Returns the binary stream from the image shared group img1 field, setting the mime type as specified by the Image mime type field." id="506" label="B - Image" name="rffBnImage" outputformat="0"/>
+      <variant description="OBJECT and EMBED tag" id="534" label="S - Flash" name="rffSnFlash" outputformat="2"/>
+      <variant description="Displays just the image as a snippet" id="521" label="S - Image" name="rffSnImage" outputformat="2"/>
+      <variant description="same as S - Image, but with the display title centered underneath the image." id="522" label="S - Image and Title" name="rffSnImageAndTitle" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffNavImage/rffNavImage.html" id="313" label="Nav Image" name="rffNavImage">
+      <variant description="Returns the binary stream from the image shared group img1 field, setting the mime type as specified by the Image mime type field." id="516" label="B - Active Image" name="rffBnActiveImage" outputformat="0"/>
+      <variant description="Returns the binary stream from the image shared group img1 field, setting the mime type as specified by the Image mime type field." id="517" label="B - Inactive Image" name="rffBnInactiveImage" outputformat="0"/>
+      <variant description="Returns the binary stream from the image shared group img1 field, setting the mime type as specified by the Image mime type field." id="515" label="B - Rollover Image" name="rffBnRolloverImage" outputformat="0"/>
+      <variant description="Place holder for nav_image relationships" id="550" label="S - Nav Image Link" name="rffSnNavImageLink" outputformat="2"/>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffNavTree/rffNavTree.html" id="315" label="NavTree" name="rffNavTree">
+      <variant description="Renders the top nav" id="540" label="S - CI Nav Bottom" name="rffSnCiNavBottom" outputformat="2"/>
+      <variant description="Renders the breadcrumbs" id="536" label="S - CI Nav Breadcrumbs" name="rffSnCiNavBreadcrumbs" outputformat="2"/>
+      <variant description="Top Menu Bar" id="535" label="S - CI Top Nav" name="rffSnCiNavTop" outputformat="2"/>
+      <variant description="Renders the top nav" id="510" label="S - EI Nav Bottom" name="rffSnEiNavBottom" outputformat="2"/>
+      <variant description="Renders the breadcrumbs" id="511" label="S - EI Nav Breadcrumbs" name="rffSnEiNavBreadcrumbs" outputformat="2"/>
+      <variant description="Renders the top nav" id="509" label="S - EI Nav Left" name="rffSnEiNavLeft" outputformat="2"/>
+      <variant description="Renders the top nav" id="507" label="S - EI Nav Top" name="rffSnEiNavTop" outputformat="2"/>
+      <variant description="Javascript preload images function" id="508" label="S - Nav Preload" name="rffSnNavPreload" outputformat="2"/>
+      <variant description="Renders the top nav" id="542" label="S - Nav Top Descendant" name="rffSnNavTopDescendant" outputformat="2"/>
+      <variant description="shows navon link" id="544" label="S - Navon Link" name="rffSnNavonLink" outputformat="2">
+         <slot slotid="513" slotname="rffNavImage"/>
+         <slot slotid="510" slotname="rffNavLandingPage"/>
+         <slot slotid="516" slotname="rffNavSubmenu"/>
+      </variant>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffNavon/rffNavon.html" id="314" label="Navon" name="rffNavon">
+      <variant description="Renders the top nav" id="540" label="S - CI Nav Bottom" name="rffSnCiNavBottom" outputformat="2"/>
+      <variant description="Renders the breadcrumbs" id="536" label="S - CI Nav Breadcrumbs" name="rffSnCiNavBreadcrumbs" outputformat="2"/>
+      <variant description="Displays the Home Image" id="553" label="S - CI Nav Home Image" name="rffSnCiNavHomeImage" outputformat="2"/>
+      <variant description="Top Menu Bar" id="535" label="S - CI Top Nav" name="rffSnCiNavTop" outputformat="2"/>
+      <variant description="Renders the top nav" id="510" label="S - EI Nav Bottom" name="rffSnEiNavBottom" outputformat="2"/>
+      <variant description="Renders the breadcrumbs" id="511" label="S - EI Nav Breadcrumbs" name="rffSnEiNavBreadcrumbs" outputformat="2"/>
+      <variant description="Renders the top nav" id="509" label="S - EI Nav Left" name="rffSnEiNavLeft" outputformat="2"/>
+      <variant description="Renders the top nav" id="507" label="S - EI Nav Top" name="rffSnEiNavTop" outputformat="2"/>
+      <variant description="Place holder for nav_home_image relationships" id="551" label="S - Nav Home Image" name="rffSnNavHomeImage" outputformat="2">
+         <slot slotid="501" slotname="rffHomeImage"/>
+      </variant>
+      <variant description="Javascript preload images function" id="508" label="S - Nav Preload" name="rffSnNavPreload" outputformat="2"/>
+      <variant description="Renders the top nav" id="542" label="S - Nav Top Descendant" name="rffSnNavTopDescendant" outputformat="2"/>
+      <variant description="shows navon link" id="544" label="S - Navon Link" name="rffSnNavonLink" outputformat="2">
+         <slot slotid="513" slotname="rffNavImage"/>
+         <slot slotid="510" slotname="rffNavLandingPage"/>
+         <slot slotid="516" slotname="rffNavSubmenu"/>
+      </variant>
+   </contenttype>
+   <contenttype ctqueryrequest="../psx_cerffPressRelease/rffPressRelease.html" id="316" label="Press Release" name="rffPressRelease">
+      <variant description="Renders the shared body field" id="546" label="P - CI Press Release" name="rffPgCiPressRelease" outputformat="1">
+         <slot slotid="504" slotname="rffContacts"/>
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Full page press release with contact slot" id="513" label="P - EI Press Release" name="rffPgEiPressRelease" outputformat="1">
+         <slot slotid="504" slotname="rffContacts"/>
+         <slot slotid="509" slotname="rffList"/>
+         <slot slotid="518" slotname="rffSidebar"/>
+      </variant>
+      <variant description="Renders the shared callout field." id="501" label="S - Callout" name="rffSnCallout" outputformat="2"/>
+      <variant description="Shows start date and title for use on index pages." id="512" label="S - Date And Title Link" name="rffSnDateAndTitleLink" outputformat="2"/>
+      <variant description="Title linked to default variant with summary." id="514" label="S - Home" name="rffSnHome" outputformat="2"/>
+      <variant description="Renders a Title and callout Link" id="503" label="S - Title Callout Link" name="rffSnTitleCalloutLink" outputformat="2"/>
+      <variant description="Renders the shared display title field as a link to the default page variant." id="504" label="S - Title Link" name="rffSnTitleLink" outputformat="2"/>
+   </contenttype>
+   <slots>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="P - CI Press Release" name="rffPgCiPressRelease"/>
+            <variant contenttype="rffHome" label="P - CI Home" name="rffPgCiHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slotallowedvariants>
+         <variant variantid="546"/>
+         <variant variantid="545"/>
+         <variant variantid="544"/>
+         <variant variantid="544"/>
+         <variant variantid="543"/>
+         <variant variantid="543"/>
+         <variant variantid="537"/>
+         <variant variantid="537"/>
+         <variant variantid="537"/>
+         <variant variantid="537"/>
+         <variant variantid="537"/>
+         <variant variantid="534"/>
+         <variant variantid="534"/>
+         <variant variantid="534"/>
+         <variant variantid="534"/>
+         <variant variantid="534"/>
+         <variant variantid="533"/>
+         <variant variantid="551"/>
+         <variant variantid="550"/>
+         <variant variantid="549"/>
+         <variant variantid="548"/>
+         <variant variantid="527"/>
+         <variant variantid="527"/>
+         <variant variantid="527"/>
+         <variant variantid="527"/>
+         <variant variantid="527"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="526"/>
+         <variant variantid="525"/>
+         <variant variantid="524"/>
+         <variant variantid="524"/>
+         <variant variantid="524"/>
+         <variant variantid="524"/>
+         <variant variantid="524"/>
+         <variant variantid="506"/>
+         <variant variantid="506"/>
+         <variant variantid="505"/>
+         <variant variantid="505"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="504"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="503"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="502"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="501"/>
+         <variant variantid="523"/>
+         <variant variantid="523"/>
+         <variant variantid="523"/>
+         <variant variantid="523"/>
+         <variant variantid="523"/>
+         <variant variantid="522"/>
+         <variant variantid="522"/>
+         <variant variantid="522"/>
+         <variant variantid="522"/>
+         <variant variantid="522"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="521"/>
+         <variant variantid="520"/>
+         <variant variantid="520"/>
+         <variant variantid="520"/>
+         <variant variantid="520"/>
+         <variant variantid="519"/>
+         <variant variantid="519"/>
+         <variant variantid="519"/>
+         <variant variantid="519"/>
+         <variant variantid="519"/>
+         <variant variantid="519"/>
+         <variant variantid="518"/>
+         <variant variantid="518"/>
+         <variant variantid="518"/>
+         <variant variantid="518"/>
+         <variant variantid="518"/>
+         <variant variantid="518"/>
+         <variant variantid="514"/>
+         <variant variantid="514"/>
+         <variant variantid="514"/>
+         <variant variantid="514"/>
+         <variant variantid="514"/>
+         <variant variantid="513"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="512"/>
+         <variant variantid="530"/>
+         <variant variantid="529"/>
+         <variant variantid="528"/>
+         <variant variantid="528"/>
+         <variant variantid="528"/>
+         <variant variantid="528"/>
+         <variant variantid="528"/>
+         <variant variantid=""/>
+      </slotallowedvariants>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="submenu slot for managed nav" slotid="516" slotlabel="Nav Submenu" slotname="rffNavSubmenu" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffNavTree" label="S - Navon Link" name="rffSnNavonLink"/>
+            <variant contenttype="rffNavon" label="S - Navon Link" name="rffSnNavonLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="P - CI Generic" name="rffPgCiGeneric"/>
+            <variant contenttype="rffGeneric" label="P - CI Generic" name="rffPgCiGeneric"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout and More Link" name="rffSnTitleCalloutAndMoreLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Flash" name="rffSnFlash"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Flash" name="rffSnFlash"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Flash" name="rffSnFlash"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="For logo or promotional image on the home page" slotid="501" slotlabel="Home Image" slotname="rffHomeImage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Flash" name="rffSnFlash"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Flash" name="rffSnFlash"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="B - Binary" name="rffBnBinary"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="For logo or promotional image on the home page" slotid="501" slotlabel="Home Image" slotname="rffHomeImage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffNavon" label="S - Nav Home Image" name="rffSnNavHomeImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="navigation image for rollovers" slotid="513" slotlabel="Nav Image" slotname="rffNavImage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffNavImage" label="S - Nav Image Link" name="rffSnNavImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="P - CI Event" name="rffPgCiEvent"/>
+            <variant contenttype="rffGenericWord" label="P - CI Generic Word" name="rffPgCiGenericWord"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto List" name="rffSnAutoList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto List" name="rffSnAutoList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto List" name="rffSnAutoList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto List" name="rffSnAutoList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto List" name="rffSnAutoList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="submenu slot for managed nav" slotid="516" slotlabel="Nav Submenu" slotname="rffNavSubmenu" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffExternalLink" label="S - Link" name="rffSnLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="P - EI Event" name="rffPgEiEvent"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Date Range" name="rffSnDateRange"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Date Range" name="rffSnDateRange"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Date Range" name="rffSnDateRange"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Date Range" name="rffSnDateRange"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Date Range" name="rffSnDateRange"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline images" slotid="104" slotlabel="Inline Image Slot" slotname="sys_inline_image" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="B - Image" name="rffBnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="B - Image" name="rffBnImage"/>
+            <variant contenttype="rffGenericWord" label="P - EI Generic" name="rffPgEiGeneric"/>
+            <variant contenttype="rffGeneric" label="P - EI Generic" name="rffPgEiGeneric"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder" relationshipname="ActiveAssembly" slotdesc="Automatically finds events within the specified date range and within the specified folder tree." slotid="520" slotlabel="Calender Events" slotname="rffAutoCalendarEvents" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="query" value="select rx:sys_contentid, rx:event_start from rx:rffevent where rx:event_start &gt;= :cal_start and :cal_end &gt;= rx:event_start AND jcr:path like :site_path order by rx:event_start"/>
+         <params name="template" value="rffSnTitleLink"/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder" relationshipname="ActiveAssembly" slotdesc="Slot populated by the auto index query" slotid="505" slotlabel="Events slot" slotname="rffEvents" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="query" value="select rx:sys_contentid, rx:sys_contentstartdate  from rx:rffcalendar  where jcr:path like :sitepath order by rx:sys_contentstartdate  asc"/>
+         <params name="type" value="sql"/>
+         <params name="template" value="rffSnTitleCalloutLink"/>
+         <params name="max_results" value="4"/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder" relationshipname="ActiveAssembly" slotdesc="Auto Index Slot for use on autoindex variants" slotid="502" slotlabel="Auto Index" slotname="rffAutoIndex" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="landing page for nav" slotid="510" slotlabel="Nav Landing Page" slotname="rffNavLandingPage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Link" name="rffSnTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Title Callout Link" name="rffSnTitleCalloutLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Image Link" name="rffSnImageLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGenericWord" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffCalendar" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffBrief" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffBrief" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffBrief" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffBrief" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffBrief" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffGeneric" label="S - Callout" name="rffSnCallout"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title with Date" name="rffSnTitleWithDate"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title with Date" name="rffSnTitleWithDate"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title with Date" name="rffSnTitleWithDate"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title with Date" name="rffSnTitleWithDate"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffEvent" label="S - Title with Date" name="rffSnTitleWithDate"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image and Title" name="rffSnImageAndTitle"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image and Title" name="rffSnImageAndTitle"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image and Title" name="rffSnImageAndTitle"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image and Title" name="rffSnImageAndTitle"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image and Title" name="rffSnImageAndTitle"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Provides the image that will be linked in the S - Image Link variant" slotid="508" slotlabel="Image Link" slotname="rffImageLink" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="For logo or promotional image on the home page" slotid="501" slotlabel="Home Image" slotname="rffHomeImage" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffImage" label="S - Image" name="rffSnImage"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link and Icon" name="rffSnTitleLinkAndIcon"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link and Icon" name="rffSnTitleLinkAndIcon"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link and Icon" name="rffSnTitleLinkAndIcon"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffFile" label="S - Title Link and Icon" name="rffSnTitleLinkAndIcon"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Holds contact snippets used" slotid="504" slotlabel="Contacts" slotname="rffContacts" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Email" name="rffSnNameAndEmail"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Holds contact snippets used" slotid="504" slotlabel="Contacts" slotname="rffContacts" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffContacts" label="S - Name and Address" name="rffSnNameAndAddress"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Home" name="rffSnHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Home" name="rffSnHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Home" name="rffSnHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Home" name="rffSnHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Home" name="rffSnHome"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="P - EI Press Release" name="rffPgEiPressRelease"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder" relationshipname="" slotdesc="All press releases with a start date in 2008" slotid="523" slotlabel="All Press Releases 2008" slotname="rffAutoPressReleases2008" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="query" value="SELECT rx:sys_contentid, rx:sys_contentstartdate FROM rx:rffpressrelease WHERE rx:sys_contentstartdate &lt; '2009/1/1' AND rx:sys_contentstartdate &gt; '2007/12/31' AND jcr:path like :site_path ORDER BY rx:sys_contentstartdate"/>
+         <params name="type" value="sql"/>
+         <params name="template" value="rffSnDateAndTitleLink"/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder" relationshipname="" slotdesc="All press releases with a start date in 2007" slotid="522" slotlabel="All Press Releases 2007" slotname="rffAutoPressReleases2007" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="query" value="SELECT rx:sys_contentid, rx:sys_contentstartdate FROM rx:rffpressrelease WHERE rx:sys_contentstartdate &lt; '2008/1/1' AND rx:sys_contentstartdate &gt; '2003/12/31' AND jcr:path like :site_path ORDER BY rx:sys_contentstartdate"/>
+         <params name="type" value="sql"/>
+         <params name="template" value="rffSnDateAndTitleLink"/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffPressRelease" label="S - Date And Title Link" name="rffSnDateAndTitleLink"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for inline links" slotid="103" slotlabel="Inline Link Slot" slotname="sys_inline_link" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffHome" label="P - EI Home" name="rffPgEiHome"/>
+            <variant contenttype="rffCalendar" label="P - Calendar Month" name="rffPgCalendarMonth"/>
+         </allowedvariants>
+         <params name="" value=""/>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Generalized sidebar for related content" slotid="518" slotlabel="Sidebar slot" slotname="rffSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto Bullet List" name="rffSnAutoBulletList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Link snippets of all other types" slotid="509" slotlabel="List slot" slotname="rffList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto Bullet List" name="rffSnAutoBulletList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home List" slotid="507" slotlabel="Home List" slotname="rffHomeList" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto Bullet List" name="rffSnAutoBulletList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder" relationshipname="ActiveAssembly" slotdesc="Home Sidebar" slotid="506" slotlabel="Home Sidebar" slotname="rffHomeSidebar" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto Bullet List" name="rffSnAutoBulletList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="" relationshipname="ActiveAssembly" slotdesc="System slot for the inline variants" slotid="105" slotlabel="Inline Variant Slot" slotname="sys_inline_variant" slottype="1" systemslot="1">
+         <allowedvariants>
+            <variant contenttype="rffAutoIndex" label="S - Auto Bullet List" name="rffSnAutoBulletList"/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+      <slot finder="Java/global/percussion/slotcontentfinder/sys_ManagedNavContentFinder" relationshipname="ActiveAssembly" slotdesc="Managed navigation slot, which is used to render all navs" slotid="511" slotlabel="Managed Nav Slot" slotname="rffNav" slottype="0" systemslot="">
+         <allowedvariants>
+            <variant contenttype="" label="" name=""/>
+         </allowedvariants>
+         <params name="" value=""/>
+      </slot>
+   </slots>
+</registrations>

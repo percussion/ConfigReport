@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	
+	
+	<xsl:template match="/">
+		<lookupsgroup>
+		<lookups type="ff">
+						
+						<xsl:apply-templates select="/*/lookups/lookup[@displayname='Adhoc_Type' or @displayname='Aging_types' or @displayname='Alignment_Types'   or @displayname='Assignment_Types' or @displayname='Authorization_Typs' or @displayname='Body_Markup' or @displayname='Checkout_Status_types' or @displayname='Context' or  @displayname='Edition_Types' or starts-with(@displayname,'FF_') or @displayname='Icons' or @displayname='Icons' or @displayname='MIME_Types' or @displayname='Monthly_Events_Calendar' or @displayname='Publishable' or @displayname='Show_in_In-Box' or @displayname='Slot_Types' or @displayname='State_Role_Recipient_Types' or @displayname='System_Field' or @displayname='VisibilityContentext']"/>
+		</lookups>
+		<lookups type="local">						<xsl:apply-templates select="/*/lookups/lookup[not(@displayname='Adhoc_Type' or @displayname='Aging_types' or @displayname='Alignment_Types'  or @displayname='Assignment_Types' or @displayname='Authorization_Typs' or @displayname='Body_Markup' or @displayname='Checkout_Status_types' or @displayname='Context' or  @displayname='Edition_Types' or starts-with(@displayname,'FF_') or @displayname='Icons' or @displayname='Icons' or @displayname='MIME_Types' or @displayname='Monthly_Events_Calendar' or @displayname='Publishable' or @displayname='Show_in_In-Box' or @displayname='Slot_Types' or @displayname='State_Role_Recipient_Types' or @displayname='System_Field' or @displayname='VisibilityContentext')]"/>
+		</lookups>	
+		</lookupsgroup>		
+	</xsl:template>
+	<xsl:template match="lookup">
+		<lookup>
+			<xsl:attribute name="@displayname">
+		<xsl:value-of select="@displayname"/></xsl:attribute>
+			<xsl:attribute name="@displayname"><xsl:value-of select="@description"/></xsl:attribute>		
+			
+				<xsl:apply-templates select="lookupvalue">
+					<xsl:sort select="@sequence"/>
+				</xsl:apply-templates>
+		
+		</lookup>
+	
+	</xsl:template>
+	<xsl:template match="lookupvalue">
+
+		<lookupvalue><xsl:value-of select="@displayname"/>(<xsl:value-of select="@value"/>)</lookupvalue>
+
+	</xsl:template>
+</xsl:stylesheet>

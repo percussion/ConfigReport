@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PSXArchiveInfo archiveRef="ConfigReport" category="USER" created="1281553865654" serverName="spbbaserxvm:9992" userName="admin1">
+   <PSXFormatVersion buildId="3235" buildNumber="20090601" displayVersion="6.7.0" interfaceVersion="9" majorVersion="6" microVersion="0" minorVersion="7" optionalId="RX-16064" versionString="PATCH"/>
+   <PSXDbmsInfo>
+      <datasource>RhythmyxData</datasource>
+      <driver>oracle:thin</driver>
+      <server>@spbbaserxvm:1521:XE</server>
+      <database/>
+      <origin>RHYTHMYX</origin>
+      <userid>RHYTHMYX</userid>
+      <password>npYcIUpFqLgrGQLng9kucg==</password>
+   </PSXDbmsInfo>
+   <PSXArchiveDetail>
+      <PSXExportDescriptor archiveType="normal">
+         <PSXDescriptor id="8121985144752973584" name="ConfigReport">
+            <Description/>
+            <Publisher name="Percussion Software PSO" url="http://www.percussion.com"/>
+            <CmsVersion max="6.7.0" min="6.7.0"/>
+            <Version>1.0.0</Version>
+            <ImplConfigFile/>
+            <LocalConfigFile/>
+            <PKGDependencies/>
+         </PSXDescriptor>
+         <Packages>
+            <PSXDeployableElement>
+               <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Application-rxs_ConfigReport_cas" dependencyType="Shared" displayName="rxs_ConfigReport_cas" isAssociation="yes" isIncluded="yes" objectType="Custom" objectTypeName="Custom" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes">
+                  <Dependencies>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="actionHandler" dependencyType="Shared" displayName="actionHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="activeAssemblyHandler" dependencyType="Shared" displayName="activeAssemblyHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="agenthandler" dependencyType="Shared" displayName="agenthandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="compareHandler" dependencyType="Shared" displayName="compareHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="deployerhandler" dependencyType="Shared" displayName="deployerhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="deploymenthandler" dependencyType="Shared" displayName="deploymenthandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="EphoxHandler" dependencyType="Shared" displayName="EphoxHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="jobhandler" dependencyType="Shared" displayName="jobhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="publisherhandler" dependencyType="Shared" displayName="publisherhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="no" autoExpand="yes" dependencyId="rxs_ConfigReport_cas" dependencyType="Local" displayName="rxs_ConfigReport_cas" isAssociation="no" isIncluded="yes" objectType="Application" objectTypeName="Application" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no">
+                           <Dependencies>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="CONTENTTYPES" dependencyType="System" displayName="CONTENTTYPES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="CONTENTVARIANTS" dependencyType="Server" displayName="CONTENTVARIANTS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="NOTIFICATIONS" dependencyType="System" displayName="NOTIFICATIONS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_CONTENTLIST_EXPANDER_PARAM" dependencyType="System" displayName="PSX_CONTENTLIST_EXPANDER_PARAM" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_CONTENTLIST_GEN_PARAM" dependencyType="System" displayName="PSX_CONTENTLIST_GEN_PARAM" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_ITEM_FILTER" dependencyType="System" displayName="PSX_ITEM_FILTER" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_ROLES" dependencyType="System" displayName="PSX_ROLES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_RXCONFIGURATIONS" dependencyType="System" displayName="PSX_RXCONFIGURATIONS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_SLOT_FINDER_PARAM" dependencyType="System" displayName="PSX_SLOT_FINDER_PARAM" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="PSX_TEMPLATE" dependencyType="System" displayName="PSX_TEMPLATE" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="ROLES" dependencyType="System" displayName="ROLES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXCOMMUNITY" dependencyType="System" displayName="RXCOMMUNITY" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXCOMMUNITYROLE" dependencyType="System" displayName="RXCOMMUNITYROLE" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXCONTENTLIST" dependencyType="System" displayName="RXCONTENTLIST" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXCONTENTTYPECOMMUNITY" dependencyType="Server" displayName="RXCONTENTTYPECOMMUNITY" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXCONTEXT" dependencyType="System" displayName="RXCONTEXT" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXDUAL" dependencyType="System" displayName="RXDUAL" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXEDITION" dependencyType="System" displayName="RXEDITION" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXEDITIONCLIST" dependencyType="System" displayName="RXEDITIONCLIST" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXLOCATIONSCHEME" dependencyType="System" displayName="RXLOCATIONSCHEME" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXLOCATIONSCHEMEPARAMS" dependencyType="System" displayName="RXLOCATIONSCHEMEPARAMS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXLOOKUP" dependencyType="System" displayName="RXLOOKUP" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXSITECOMMUNITY" dependencyType="Server" displayName="RXSITECOMMUNITY" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXSITES" dependencyType="System" displayName="RXSITES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXSLOTCONTENT" dependencyType="System" displayName="RXSLOTCONTENT" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXSLOTTYPE" dependencyType="System" displayName="RXSLOTTYPE" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXVARIANTCOMMUNITY" dependencyType="Server" displayName="RXVARIANTCOMMUNITY" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXVARIANTSLOTTYPE" dependencyType="System" displayName="RXVARIANTSLOTTYPE" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="RXWORKFLOWCOMMUNITY" dependencyType="Server" displayName="RXWORKFLOWCOMMUNITY" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="STATEROLES" dependencyType="System" displayName="STATEROLES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="STATES" dependencyType="System" displayName="STATES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Java/global/percussion/contentassembler/sys_casAddChildInfo" dependencyType="System" displayName="sys_casAddChildInfo" isAssociation="yes" isIncluded="no" objectType="Extension" objectTypeName="Extension" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Java/global/percussion/generic/sys_MakeIntLink" dependencyType="System" displayName="sys_MakeIntLink" isAssociation="yes" isIncluded="no" objectType="Extension" objectTypeName="Extension" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Java/global/percussion/extensions/general/sys_SetHtmlParameter" dependencyType="System" displayName="sys_SetHtmlParameter" isAssociation="yes" isIncluded="no" objectType="Extension" objectTypeName="Extension" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="sys_wfPreviewWorkflow" dependencyType="System" displayName="sys_wfPreviewWorkflow" isAssociation="yes" isIncluded="no" objectType="Application" objectTypeName="Application" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Java/global/percussion/xmldom/sys_xdFileToTree" dependencyType="System" displayName="sys_xdFileToTree" isAssociation="yes" isIncluded="no" objectType="Extension" objectTypeName="Extension" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="Java/global/percussion/xmldom/sys_xdTextToTree" dependencyType="System" displayName="sys_xdTextToTree" isAssociation="yes" isIncluded="no" objectType="Extension" objectTypeName="Extension" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="TRANSITIONNOTIFICATIONS" dependencyType="System" displayName="TRANSITIONNOTIFICATIONS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="TRANSITIONROLES" dependencyType="System" displayName="TRANSITIONROLES" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="TRANSITIONS" dependencyType="System" displayName="TRANSITIONS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                              <PSXDeployableObject>
+                                 <PSXDependency autoDep="no" autoExpand="yes" dependencyId="WORKFLOWAPPS" dependencyType="System" displayName="WORKFLOWAPPS" isAssociation="yes" isIncluded="no" objectType="Schema" objectTypeName="Table Schema" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                                 <RequiredClasses/>
+                              </PSXDeployableObject>
+                           </Dependencies>
+                        </PSXDependency>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="sys_ceFieldsCataloger" dependencyType="Shared" displayName="sys_ceFieldsCataloger" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="sys_GlobalTemplateHandler" dependencyType="Shared" displayName="sys_GlobalTemplateHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="webServicesHandler" dependencyType="Shared" displayName="webServicesHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="wephandler" dependencyType="Shared" displayName="wephandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                  </Dependencies>
+               </PSXDependency>
+               <Description/>
+            </PSXDeployableElement>
+            <PSXDeployableElement>
+               <PSXDependency autoDep="no" autoExpand="yes" dependencyId="sys_UserDependency" dependencyType="Shared" displayName="User Dependency" isAssociation="yes" isIncluded="yes" objectType="Custom" objectTypeName="Custom" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="yes">
+                  <Dependencies>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="actionHandler" dependencyType="Shared" displayName="actionHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="activeAssemblyHandler" dependencyType="Shared" displayName="activeAssemblyHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="agenthandler" dependencyType="Shared" displayName="agenthandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="compareHandler" dependencyType="Shared" displayName="compareHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="deployerhandler" dependencyType="Shared" displayName="deployerhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="deploymenthandler" dependencyType="Shared" displayName="deploymenthandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="EphoxHandler" dependencyType="Shared" displayName="EphoxHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="jobhandler" dependencyType="Shared" displayName="jobhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXUserDependency parentId="sys_UserDependency" parentKey="Custom-sys_UserDependency" parentType="Custom" path="sys_wfPreviewWorkflow/previewworkflow.xsl">
+                        <PSXDeployableObject>
+                           <PSXDependency autoDep="no" autoExpand="yes" dependencyId="sys_wfPreviewWorkflow/previewworkflow.xsl" dependencyType="User" displayName="previewworkflow.xsl" isAssociation="no" isIncluded="yes" objectType="sys_UserDependency" objectTypeName="User Dependency" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no">
+                              <Dependencies/>
+                           </PSXDependency>
+                           <RequiredClasses/>
+                        </PSXDeployableObject>
+                     </PSXUserDependency>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="publisherhandler" dependencyType="Shared" displayName="publisherhandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="sys_ceFieldsCataloger" dependencyType="Shared" displayName="sys_ceFieldsCataloger" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="sys_GlobalTemplateHandler" dependencyType="Shared" displayName="sys_GlobalTemplateHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="webServicesHandler" dependencyType="Shared" displayName="webServicesHandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                     <PSXDeployableObject>
+                        <PSXDependency autoDep="yes" autoExpand="yes" dependencyId="wephandler" dependencyType="Shared" displayName="wephandler" isAssociation="yes" isIncluded="no" objectType="LoadableHandler" objectTypeName="LoadableHandler" supportsIdMapping="no" supportsIdTypes="no" supportsParentId="no" supportsUserDependencies="no"/>
+                        <RequiredClasses/>
+                     </PSXDeployableObject>
+                  </Dependencies>
+               </PSXDependency>
+               <Description/>
+            </PSXDeployableElement>
+         </Packages>
+         <ModifiedPackages/>
+         <MissingPackages/>
+      </PSXExportDescriptor>
+      <DbmsInfoMap>
+         <DbmsInfoMapping PkgKey="Custom-Application-rxs_ConfigReport_cas"/>
+         <DbmsInfoMapping PkgKey="Custom-sys_UserDependency"/>
+      </DbmsInfoMap>
+   </PSXArchiveDetail>
+</PSXArchiveInfo>

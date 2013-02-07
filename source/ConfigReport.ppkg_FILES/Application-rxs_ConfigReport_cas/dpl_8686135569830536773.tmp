@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:template match="/">
+	
+	<html>
+		<head>
+			<title>Transition Notifications</title>
+		</head>
+		<body>
+		<h3>Transition Notifications</h3>
+		<xsl:choose>
+			<xsl:when test="/*/*/NOTIFICATION">
+				<table border="1">
+					<td>Transition Name</td>
+					<td>Notification Subject</td>
+					<xsl:apply-templates select="/*/TRANSITIONNOTIFICATIONS"/>
+				</table>
+			</xsl:when>
+			<xsl:otherwise>
+			<p>There are no Transition Notifications set for this workflow.</p>
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		</body>
+	</html>
+	</xsl:template>
+	<xsl:template match="TRANSITIONNOTIFICATIONS">
+		<tr>
+			<td><xsl:value-of select="@TRANSITIONNAME"/></td>
+			<td><xsl:for-each select="NOTIFICATION"><xsl:value-of select="@SUBJECT"/><xsl:if test="not(position()=last())">,</xsl:if></xsl:for-each></td>
+		</tr>
+	</xsl:template>
+</xsl:stylesheet>

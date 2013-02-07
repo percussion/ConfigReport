@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+
+<xsl:template match="node()|@*" mode="wfparse">
+   <xsl:copy>
+   <xsl:apply-templates select="@*" mode="wfparse"/>
+   <xsl:apply-templates mode="wfparse"/>
+   </xsl:copy>
+ </xsl:template>
+<xsl:template match="@href" mode="wfparse">
+	<xsl:attribute name="href">#</xsl:attribute>
+</xsl:template>
+
+<xsl:template match="img[starts-with(@alt,'Add ')]" mode="wfparse">
+</xsl:template>
+
+
+<xsl:template match="table" mode="wfparse">
+	<xsl:copy>
+	<xsl:attribute name="class">workflowtable</xsl:attribute>
+	<xsl:apply-templates select="@*" mode="wfparse"/>
+        <xsl:apply-templates mode="wfparse"/>
+</xsl:copy>
+</xsl:template>
+
+<xsl:template match="div" mode="wfparse">
+	<xsl:copy>
+	<xsl:attribute name="class">tranlabel</xsl:attribute>
+	<xsl:apply-templates select="@*" mode="wfparse"/>
+   <xsl:apply-templates mode="wfparse"/>
+</xsl:copy>
+
+
+</xsl:template>
+<xsl:variable name="rootdoc" select="/"/>
+<xsl:template match="@src" mode="wfparse">
+	<xsl:attribute name="src"><xsl:value-of select="concat($rootdoc/*/@workflowdiagint,'/',.)"/></xsl:attribute>
+</xsl:template>
+
+
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Workflows</title>
+				<style>
+div.tranlabel
+{
+    COLOR: #008000;
+    FONT-FAMILY: 'sans-serif';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    POSITION:absolute;
+    Z-INDEX: 1
+   
+}
+
+.wfbox
+{
+   position:relative;
+}
+
+a.workflow
+{
+    COLOR: #000000;
+}
+
+a.state
+{
+    COLOR: #CC0000;
+}
+
+a.transition
+{
+    COLOR: #CC0000;
+}
+
+span
+{
+    COLOR: #ff0000;
+    FONT-FAMILY: 'sans-serif';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    Z-INDEX: 1
+}
+</style>
+			</head>
+			<body>
+				<xsl:apply-templates select="/*/WORKFLOWAPPS"/>
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="WORKFLOWAPPS">
+	
+	<h2><xsl:value-of select="@WORKFLOWAPPNAME"/></h2>
+	<p><xsl:value-of select="@WORKFLOWAPPDESC"/></p>
+
+	<xsl:comment>link = <xsl:value-of select="concat($rootdoc/*/@workflowdiaglink,'?sys_componentname=wf_all&amp;sys_pagename=wf_all&amp;workflowid=',@WORKFLOWAPPID)"/></xsl:comment>
+	<div class="wfbox">
+	<img height="10" width="90" src="{concat($rootdoc/*/@workflowdiagint,'/blank_0.gif')}"/>
+	<xsl:apply-templates select="document(concat(substring-before($rootdoc/*/@workflowdiaglink,'?'),'?sys_componentname=wf_all&amp;sys_pagename=wf_all&amp;workflowid=',@WORKFLOWAPPID))/*/body/*" mode="wfparse"/>
+	</div>
+	<!--<iframe 
+src ="{/*/@workflowdiaglink}?sys_componentname=wf_all&amp;sys_pagename=wf_all&amp;workflowid={@WORKFLOWAPPID}"
+width="100%" height="660">&#160;</iframe>-->
+	<h3>State/Role Permissions</h3>
+	<p>The following table details the permissions that different roles have on the states which form
+this workflow. Ad-Hoc defines whether any assignment and notification should go to
+everyone in the defined role or to the user(s) in the role specified by the person making the
+transition to that state.</p>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td><strong>State</strong></td>
+					<td><strong>Role</strong></td>
+					<td><strong>Assignment</strong></td>
+<td><strong>Ad-Hoc</strong></td>
+<td><strong>Notify Enabled</strong></td>
+<td><strong>Show in Inbox</strong></td>
+
+
+				</tr>
+				<xsl:apply-templates select="state"/>
+			</tbody>
+		</table>
+		<xsl:copy-of select="document(concat(/*/@transitionroleslink,'&amp;sys_workflowid=',@WORKFLOWAPPID))/*/body/*"/>
+			<xsl:copy-of select="document(concat(/*/@transitionnotificationslink,'&amp;sys_workflowid=',@WORKFLOWAPPID))/*/body/*"/>
+
+		</xsl:template>
+	<xsl:template match="state">
+	
+			<xsl:for-each select="role[@assignment='3' or @assignment='2']">
+				<tr>
+				<td><xsl:choose>
+					<xsl:when test="position()=1"><xsl:value-of select="../@statename"/></xsl:when>
+					<xsl:otherwise>&#160;</xsl:otherwise>
+				</xsl:choose></td>
+					<td><xsl:value-of select="@name"/></td>
+
+				<td>
+				<xsl:choose>
+					<xsl:when test="@assignment='3'">Assignee</xsl:when>
+					<xsl:when test="@assignment='2'">Reader</xsl:when>
+				</xsl:choose>
+				</td>
+				<td>
+				<xsl:choose>
+					<xsl:when test="@adhoc='0'">Disabled</xsl:when>
+					<xsl:when test="@adhoc='1'">Enabled</xsl:when>
+					<xsl:when test="@adhoc='2'">Anonymous</xsl:when>
+				</xsl:choose>
+				</td>
+					<td>
+				<xsl:choose>
+					<xsl:when test="@notify='n'">No</xsl:when>
+					<xsl:when test="@notify='y'">Yes</xsl:when>
+				</xsl:choose>
+				</td>
+					<td>
+				<xsl:choose>
+					<xsl:when test="@showinbox='n'">No</xsl:when>
+					<xsl:when test="@showinbox='y'">Yes</xsl:when>
+				</xsl:choose>
+				</td>
+
+</tr>
+			</xsl:for-each>
+			
+		
+	</xsl:template>
+</xsl:stylesheet>

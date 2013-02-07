@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:saxon="http://icl.com/saxon" extension-element-prefixes="saxon">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:variable name="setup" select="document(/*/@setup)/*/root/setup"/>
+	<xsl:variable name="applications" select="/*/@applications"/>
+	<xsl:template match="/">
+		<configuration>
+			<contentTypes>
+				<xsl:apply-templates select="/registrations/contenttype">
+					<xsl:sort order="ascending" select="@name"/>
+				</xsl:apply-templates>
+			</contentTypes>
+			
+			<xsl:comment>url=<xsl:value-of select="/*/@variantcommunityurl"/></xsl:comment>
+			<xsl:copy-of select="document(/*/@variantcommunityurl)/*"/>
+			<xsl:comment>url=<xsl:value-of select="/*/@workflowurl"/></xsl:comment>
+						
+			<xsl:copy-of select="document(/*/@workflowurl)/*"/>
+			<xsl:comment>url=<xsl:value-of select="concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/system_dummy.xml')"/></xsl:comment>
+			<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/system_dummy.xml'))/*"/>
+			<xsl:comment>url=<xsl:value-of select="concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/shared_dummy.xml')"/></xsl:comment>
+				
+			<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/shared_dummy.xml'))/*"/>
+			<xsl:comment>url=<xsl:value-of select="/*/@lookupurl"/></xsl:comment>
+			<xsl:copy-of select="document(/*/@lookupurl)/*"/>	
+	
+			<slots type="inline">
+				<xsl:apply-templates select="/*/slots/slot[@slottype='1']" mode="mainslot"/>
+				
+			</slots>
+			<slots type="regular">
+				<xsl:apply-templates select="/*/slots/slot[@slottype='0' and @finder='Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder']" mode="mainslot"/>
+				
+			</slots>
+			<slots type="auto">
+				<xsl:apply-templates select="/*/slots/slot[@slottype='0' and @finder='Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder']" mode="mainslot"/>
+				
+			</slots>
+
+			<slots type="nav">
+				<xsl:apply-templates select="/*/slots/slot[@slottype='0' and @finder='Java/global/percussion/slotcontentfinder/sys_ManagedNavContentFinder']" mode="mainslot"/>
+					
+			</slots>
+
+			<publishing>
+				<xsl:comment>url=<xsl:value-of select="/*/@publisherurl"/></xsl:comment>
+				<xsl:copy-of select="document(/*/@publisherurl)/*"/>
+				<xsl:comment>url=<xsl:value-of select="/*/@siteurl"/></xsl:comment>
+				<xsl:copy-of select="document(/*/@sitesurl)/*"/>
+				<xsl:comment>url=<xsl:value-of select="/*/@editionurl"/></xsl:comment>
+				<xsl:copy-of select="document(/*/@editionsurl)/*"/>
+				<xsl:comment>url=<xsl:value-of select="/*/@contentlisturl"/></xsl:comment>
+				<xsl:copy-of select="document(/*/@contentlistsurl)/*"/>
+				<xsl:comment>url=<xsl:value-of select="/*/@locationschemeurl"/></xsl:comment>
+				<xsl:copy-of select="document(/*/@locationschemeurl)/*"/>
+			</publishing>
+
+			
+
+		</configuration>
+		
+	</xsl:template>
+	<xsl:template match="contenttype">
+		
+		<xsl:variable name="ctosfile" select="concat('ObjectStore/',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'.xml')"/>
+		<xsl:variable name="filename" select="concat(/registrations/@contenttypeurl,'&amp;ctxml=',$ctosfile)"/>
+		<xsl:comment>Content type include=<xsl:value-of select="$filename"/></xsl:comment>
+		<xsl:copy-of select="document($filename)/*"/>
+	</xsl:template>
+	<xsl:template match="variant">
+		<template name="{@name}" description="@description">
+			<slots>
+				<xsl:apply-templates select="slot">
+					<xsl:sort order="ascending" select="@slotname"/>
+				</xsl:apply-templates>
+			</slots>
+		</template>
+		
+	</xsl:template>
+	<xsl:template match="slot">
+		<slot name="{@slotname}"/>
+	</xsl:template>
+
+
+	<xsl:template match="slot" mode="mainslot">
+		<xsl:if test="not(starts-with(@slotname,'rff')) or @slotname='rffNav' or @slotname='rffNavImage'  or @slotname='rffNavSubmenu'  or @slotname='rffNavLandingPage'">
+			
+			<slot name="{@slotname}" label="{@slotlabel}" desc="{@slotdesc}" finder="{@finder}">
+			<xsl:if test="allowedvariants/variant[string-length(@name)&gt;0]">
+						<allowedTemplates>
+							<xsl:apply-templates select="allowedvariants/variant">
+								<xsl:sort select="concat(@contenttype,@name)" order="ascending"/>
+							</xsl:apply-templates>
+						</allowedTemplates>
+					</xsl:if>
+			<xsl:if test="count(params)&gt;0">
+						<params>
+							<xsl:apply-templates select="params[string-length(@name)&gt;0]" >
+								<xsl:sort select="@name" order="ascending"/>
+							</xsl:apply-templates>
+						</params>
+					</xsl:if>	
+			</slot>
+
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="params">
+		<param name="@name" value="{@value}"/>
+		
+	</xsl:template>
+	<xsl:template match="allowedvariants/variant">
+		<allowedTemplate ct="{@contenttype}" template="{@name}"/>
+	</xsl:template>
+</xsl:stylesheet>

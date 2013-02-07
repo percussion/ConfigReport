@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	
+	
+	<xsl:template match="/">
+		<html>
+			<head>
+				<title>Keywords</title>
+			</head>
+			<body>
+				<p>Within the content editor definitions a number of “lookups” are defined. The values for
+these lookups are either retrieved from an external source such as a web service, or
+maintained through the Rhythmyx Workbench interface (within the “Keywords” section of
+the Content Design tab).</p>
+				<h3>Fast Forward Keywords</h3>
+				<p>The following lookup values are defined in the Fast Forward sample implementation:</p>
+				<table border="1">
+						<tr>
+							<th>Lookup Name</th>
+							<th>Lookup Description</th>
+							<th>Values</th>
+						</tr>
+						<xsl:apply-templates select="/*/lookups/lookup[@displayname='Adhoc_Type' or @displayname='Aging_types' or @displayname='Alignment_Types'   or @displayname='Assignment_Types' or @displayname='Authorization_Typs' or @displayname='Body_Markup' or @displayname='Checkout_Status_types' or @displayname='Context' or  @displayname='Edition_Types' or starts-with(@displayname,'FF_') or @displayname='Icons' or @displayname='Icons' or @displayname='MIME_Types' or @displayname='Monthly_Events_Calendar' or @displayname='Publishable' or @displayname='Show_in_In-Box' or @displayname='Slot_Types' or @displayname='State_Role_Recipient_Types' or @displayname='System_Field' or @displayname='VisibilityContentext']"/>
+				</table>
+				<h3>Local Implementation Keywords</h3>
+				<p>The following lookups are defined for this implementation:</p>
+
+				<table border="1">
+					<tr>
+							<th>Lookup Name</th>
+							<th>Lookup Description</th>
+							<th>Values</th>
+						</tr>
+						<xsl:apply-templates select="/*/lookups/lookup[not(@displayname='Adhoc_Type' or @displayname='Aging_types' or @displayname='Alignment_Types'  or @displayname='Assignment_Types' or @displayname='Authorization_Typs' or @displayname='Body_Markup' or @displayname='Checkout_Status_types' or @displayname='Context' or  @displayname='Edition_Types' or starts-with(@displayname,'FF_') or @displayname='Icons' or @displayname='Icons' or @displayname='MIME_Types' or @displayname='Monthly_Events_Calendar' or @displayname='Publishable' or @displayname='Show_in_In-Box' or @displayname='Slot_Types' or @displayname='State_Role_Recipient_Types' or @displayname='System_Field' or @displayname='VisibilityContentext')]"/>
+				</table>
+			
+
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="lookup">
+		<tr>
+			<td><xsl:value-of select="@displayname"/></td>
+			<td><xsl:choose>
+				<xsl:when test="string-length(@description) &gt;0 "><xsl:value-of select="@description"/></xsl:when>
+				<xsl:otherwise>&#160;</xsl:otherwise>
+			</xsl:choose></td>
+			<td><xsl:if test="lookupvalue">
+			<ul>
+				<xsl:apply-templates select="lookupvalue">
+					<xsl:sort select="@sequence"/>
+				</xsl:apply-templates>
+			</ul>
+			</xsl:if>
+			</td>
+
+		</tr>
+	
+	</xsl:template>
+	<xsl:template match="lookupvalue">
+
+		<li><xsl:value-of select="@displayname"/>(<xsl:value-of select="@value"/>)</li>
+
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT lookupvalue (#PCDATA)>
+<!ATTLIST  lookupvalue id CDATA #REQUIRED>
+<!ATTLIST  lookupvalue displayname CDATA #REQUIRED>
+<!ATTLIST  lookupvalue value CDATA #REQUIRED>
+<!ATTLIST  lookupvalue description CDATA #REQUIRED>
+<!ATTLIST  lookupvalue sequence CDATA #REQUIRED>
+<!ELEMENT lookup (lookupvalue* )>
+<!ATTLIST  lookup id CDATA #REQUIRED>
+<!ATTLIST  lookup displayname CDATA #REQUIRED>
+<!ATTLIST  lookup description CDATA #REQUIRED>
+<!ELEMENT lookups (lookup* )>
+<!ELEMENT root (lookups )>

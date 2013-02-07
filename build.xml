@@ -1,0 +1,19 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<project name="ConfigReport" default="dist" basedir=".">
+
+	
+<target name="clean" description="Clean the distribution directory.">
+	<delete dir="${basedir}/dist"/>
+</target>
+	
+<target name="dist" description="Generates the Package Installer package from the package source files." depends="clean">
+	<echo>Creating package archive...</echo>
+	<mkdir dir="${basedir}/dist" />
+	<zip destfile="${basedir}/dist/ConfigReport.ppkg" casesensitive="true" whenempty="fail" >
+	<fileset dir="${basedir}/source/ConfigReport.ppkg_FILES">
+		<include name="**/*" />
+	</fileset>
+	</zip>
+</target>
+
+</project>

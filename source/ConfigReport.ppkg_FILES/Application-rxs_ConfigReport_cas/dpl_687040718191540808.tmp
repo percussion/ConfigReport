@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:saxon="http://icl.com/saxon" extension-element-prefixes="saxon">
+	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:variable name="setup" select="document(/*/@setup)/*/root/setup"/>
+	<xsl:variable name="applications" select="/*/@applications"/>
+	<xsl:template match="/">
+		<saxon:output href="rxs_ConfigReport_cas/reports/full_report.html">
+			<html>
+				<head>
+					<title>Full Report</title>
+					<link rel="StyleSheet" href="inphecthyuz.css" type="text/css"></link>
+				<style type="text/css">
+div.tranlabel
+{
+    COLOR: #008000;
+    FONT-FAMILY: 'sans-serif';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    POSITION:absolute;
+    Z-INDEX: 1
+   
+}
+
+div.wfbox
+{
+   position:relative;
+}
+
+
+div.wfbox table {
+	border-spacing:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#FFFFFF;
+	color: #FFFFFF;
+}
+
+div.wfbox table td a:link, div.wfbox table td a:visited {
+
+}
+
+ div.wfbox tbody th a:link, div.wfbox tbody th a:visited{
+	color:#000000;
+	background:none;
+	padding:0px 0px 0px 0px;
+}
+
+div.wfbox thead th {
+	text-align: center;
+	background: none;
+	color: #000000;
+	border: none;
+	text-transform:none;
+}
+
+div.wfbox tbody tr.odd 	{
+	background: #ffffff;
+	border-top:1px solid #FFF;
+}
+
+div.wfbox tbody tr		{
+	background-color:#FFFFFF; 
+	text-align:left;
+	border: none;
+	} 
+
+a.workflow
+{
+    COLOR: #000000;
+}
+
+a.state
+{
+    COLOR: #CC0000;
+}
+
+a.transition
+{
+    COLOR: #CC0000;
+}
+</style>
+				</head>
+				<body>
+					<saxon:output href="rxs_ConfigReport_cas/reports/slots.html">
+						<h2>Slots</h2>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Name</th>
+									<th>Label</th>
+									<th>Description</th>
+									<th>Allowed Type (Template)</th>
+								</tr>
+								<xsl:apply-templates select="/*/slots/slot" mode="mainslot"/>
+							</tbody>
+						</table>
+					</saxon:output>
+					<xsl:apply-templates select="/registrations/contenttype[not(starts-with(@name,'rff')) or @name='rffNavon' or @name='rffNavTree' or @name='rffNavImage']">
+						<xsl:sort order="ascending" select="@name"/>
+					</xsl:apply-templates>
+				</body>
+			</html>
+		</saxon:output>
+		<saxon:output href="rxs_ConfigReport_cas/reports/full_report.xml">
+			<xsl:copy-of select="/"/>
+		</saxon:output>
+		<saxon:output href="rxs_ConfigReport_cas/reports/variant_community.html">
+			<xsl:copy-of select="document(/*/@variantcommunityurl)/*"/>
+		</saxon:output>
+		<saxon:output href="rxs_ConfigReport_cas/reports/roles_by_community.xml">
+			<xsl:copy-of select="document(/*/@rolesbycommunity)/*"/>
+		</saxon:output>
+		<saxon:output href="rxs_ConfigReport_cas/reports/slotreporturl.xml">
+			<xsl:copy-of select="document(/*/@slotreporturl)/*"/>
+		</saxon:output>
+		<xsl:for-each select="$setup/app">
+			<saxon:output href="rxs_ConfigReport_cas/reports/{.}_app.html">
+				<xsl:variable name="filename" select="concat('ObjectStore/',.,'.xml')"/>
+				<xsl:copy-of select="document(concat($applications,'&amp;ctxml=',$filename))/*"/>
+			</saxon:output>
+		</xsl:for-each>
+		<saxon:output href="rxs_ConfigReport_cas/reports/system_defs.html">
+			<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/system_dummy.xml'))/*/body/*"/>
+		</saxon:output>
+		<saxon:output href="rxs_ConfigReport_cas/reports/shared_defs.html">
+			<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/shared_dummy.xml'))/*/body/*"/>
+		</saxon:output>
+		<html>
+			<head>
+				<title>Full Report</title>
+				<link rel="StyleSheet" href="inphecthyuz.css" type="text/css"></link>
+				<style type="text/css" media="print">
+
+				@page port {size: portrait;}
+				@page land {size: landscape;}
+
+				.portrait {page: port;}
+				.pagebreak {page-break-before:always;}
+
+				.landscape {page: land;}
+
+				table {
+	
+					font-size:7px;
+				}
+
+</style>
+	<style type="text/css">
+div.tranlabel
+{
+    COLOR: #008000;
+    FONT-FAMILY: 'sans-serif';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    POSITION:absolute;
+    Z-INDEX: 1
+   
+}
+
+div.wfbox
+{
+   position:relative;
+}
+
+
+div.wfbox table {
+	border-spacing:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#FFFFFF;
+	color: #FFFFFF;
+}
+
+div.wfbox table td a:link, div.wfbox table td a:visited {
+
+}
+
+ div.wfbox tbody th a:link, div.wfbox tbody th a:visited{
+	color:#000000;
+	background:none;
+	padding:0px 0px 0px 0px;
+}
+
+div.wfbox thead th {
+	text-align: center;
+	background: none;
+	color: #000000;
+	border: none;
+	text-transform:none;
+}
+
+div.wfbox tbody tr.odd 	{
+	background: #ffffff;
+	border-top:1px solid #FFF;
+}
+
+div.wfbox tbody tr		{
+	background-color:#FFFFFF; 
+	text-align:default;
+	border: none;
+	} 
+div.wfbox tbody tr td { 
+	height:20px;
+	background: #FFF;
+	border: 0px solid #FFF;
+	}
+
+div.wfbox td, th {
+	padding: 0px;
+}
+
+a.workflow
+{
+    COLOR: #000000;
+}
+
+a.state
+{
+    COLOR: #CC0000;
+}
+
+a.transition
+{
+    COLOR: #CC0000;
+}
+</style>
+			</head>
+			<body>
+				<h1 class="landscape">Appendix A - Content Types </h1>
+				<h2>Fast Forward Content types</h2>
+				<xsl:apply-templates select="/registrations/contenttype[@name='rffNavon' or @name='rffNavTree' or @name='rffNavImage']">
+					<xsl:sort order="ascending" select="@name"/>
+				</xsl:apply-templates>
+				<h2>Non Fast Forward Content types</h2>
+				<xsl:apply-templates select="/registrations/contenttype[not(starts-with(@name,'rff'))]">
+					<xsl:sort order="ascending" select="@name"/>
+				</xsl:apply-templates>
+				
+
+				<h1 class="pagebreak landscape">Appendix B - Community Mappings</h1>
+				<xsl:copy-of select="document(/*/@variantcommunityurl)/*/body/*"/>
+
+				<h1 class="pagebreak portrait" >Appendix C - Workflow</h1>
+				<xsl:copy-of select="document(/*/@workflowurl)/*/body/*"/>
+
+				<h1 class="pagebreak landscape">Appendix D - System Defs</h1>
+				<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/system_dummy.xml'))/*/body/*"/>
+				<h1 class="pagebreak landscape">Appendix E - Shared Defs</h1>
+				<xsl:copy-of select="document(concat($applications,'&amp;ctxml=rxs_ConfigReport_cas/shared_dummy.xml'))/*/body/*"/>
+				<h1 class="pagebreak portrait">Appendix F - Lookups</h1>
+
+				<xsl:copy-of select="document(/*/@lookupurl)/*/body/*"/>
+			
+				<h1 class="pagebreak portrait">Appendix G - Slots</h1>
+				<h2>Inline Slots</h2>
+				<table border="1" width="100%">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Label</th>
+							<th>Description</th>
+							<th>Allowed Type (Template)</th>
+						</tr>
+						<xsl:apply-templates select="/*/slots/slot[@slottype='1']" mode="mainslot"/>
+					</tbody>
+				</table>
+				<h2>Regular Slots</h2>
+				<table border="1" width="100%">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Label</th>
+							<th>Description</th>
+							<th>Allowed Type (Template)</th>
+						</tr>
+						<xsl:apply-templates select="/*/slots/slot[@slottype='0' and (@finder='Java/global/percussion/slotcontentfinder/sys_RelationshipContentFinder' or string-length(@finder)=0)]" mode="mainslot"/>
+					</tbody>
+				</table>
+				<h2>Auto Slots</h2>
+				<table border="1" width="100%">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Label</th>
+							<th>Description</th>
+							<th>Params</th>
+						</tr>
+						<xsl:apply-templates select="/*/slots/slot[@slottype='0' and @finder='Java/global/percussion/slotcontentfinder/sys_AutoSlotContentFinder']" mode="autoslot"/>
+					</tbody>
+				</table>
+				<h2>Navigation Slots</h2>
+				<p>Normally there is only one of these.  This will provide the items to render the navigation within the page.  The navigation template to use is specified in the page template.</p>
+				<table border="1" width="100%">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Label</th>
+							<th>Description</th>
+							<th>Allowed Type (Template)</th>
+						</tr>
+						<xsl:apply-templates select="/*/slots/slot[@slottype='0' and @finder='Java/global/percussion/slotcontentfinder/sys_ManagedNavContentFinder']" mode="mainslot"/>
+					</tbody>
+				</table>
+				
+			
+				<h1 class="pagebreak portrait">Appendix H - Publishing</h1>
+				<xsl:copy-of select="document(/*/@editionsurl)/*/body/*"/>
+				<xsl:copy-of select="document(/*/@contentlistsurl)/*/body/*"/>
+				<xsl:copy-of select="document(/*/@locationschemeurl)/*/body/*"/>
+			</body>
+		</html>
+	</xsl:template>
+	<xsl:template match="contenttype">
+		<xsl:variable name="fileout" select="concat('rxs_ConfigReport_cas/reports/',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'_ct.html')"/>
+		<saxon:output href="{$fileout}">
+			<xsl:variable name="ctosfile" select="concat('ObjectStore/',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'.xml')"/>
+			<xsl:variable name="filename" select="concat(/registrations/@contenttypeurl,'&amp;ctxml=',$ctosfile)"/>
+			<xsl:copy-of select="document($filename)/*/body/*"/>
+		</saxon:output>
+		<xsl:variable name="ctosfile" select="concat('ObjectStore/',substring-before(substring-after(@ctqueryrequest,'/'),'/'),'.xml')"/>
+		<xsl:variable name="filename" select="concat(/registrations/@contenttypeurl,'&amp;ctxml=',$ctosfile)"/>
+		<div class="landscape pagebreak"></div>
+		<xsl:copy-of select="document($filename)/*/body/*"/>
+	</xsl:template>
+	<xsl:template match="variant">
+		<tr>
+			<td>
+				<xsl:value-of select="@name"/>
+			</td>
+			<td>
+				<xsl:value-of select="@description"/>
+			</td>
+			<td>
+				<xsl:if test="slot">
+					<ul>
+						<xsl:apply-templates select="slot">
+							<xsl:sort order="ascending" select="@slotname"/>
+						</xsl:apply-templates>
+					</ul>
+				</xsl:if>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="slot">
+		<li>
+			<xsl:value-of select="@slotname"/>
+		</li>
+	</xsl:template>
+	<xsl:template match="slot" mode="mainslot">
+		<xsl:if test="not(starts-with(@slotname,'rff')) or @slotname='rffNav' or @slotname='rffNavImage'  or @slotname='rffNavSubmenu'  or @slotname='rffNavLandingPage'">
+			<tr>
+				<td>
+					<xsl:value-of select="@slotname"/>&#160;</td>
+				<td>
+					<xsl:value-of select="@slotlabel"/>&#160;</td>
+				<td>
+					<xsl:value-of select="@slotdesc"/>&#160;</td>
+				<td>
+					<xsl:if test="allowedvariants/variant[string-length(@name)&gt;0]">
+						<ul>
+							<xsl:apply-templates select="allowedvariants/variant">
+								<xsl:sort select="concat(@contenttype,@name)" order="ascending"/>
+							</xsl:apply-templates>
+						</ul>
+					</xsl:if>	&#160;
+					</td>
+			</tr>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="slot" mode="autoslot">
+		<xsl:if test="not(starts-with(@slotname,'rff')) or @slotname='rffNav' or @slotname='rffNavImage'  or @slotname='rffNavSubmenu'  or @slotname='rffNavLandingPage'">
+			<tr>
+				<td>
+					<xsl:value-of select="@slotname"/>&#160;</td>
+				<td>
+					<xsl:value-of select="@slotlabel"/>&#160;</td>
+				<td>
+					<xsl:value-of select="@slotdesc"/>&#160;</td>
+				<td>
+					<xsl:if test="count(params)&gt;0">
+						<ul>
+							<xsl:apply-templates select="params[string-length(@name)&gt;0]" mode="autoslot">
+								<xsl:sort select="@name" order="ascending"/>
+							</xsl:apply-templates>
+						</ul>
+					</xsl:if>	&#160;
+					</td>
+			</tr>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="params" mode="autoslot">
+		<li>
+			<xsl:value-of select="@name"/>=<xsl:value-of select="@value"/>
+		</li>
+	</xsl:template>
+	<xsl:template match="allowedvariants/variant">
+		<li>
+			<xsl:value-of select="@contenttype"/>
+			<xsl:text> : </xsl:text>
+			<xsl:value-of select="@name"/>
+		</li>
+	</xsl:template>
+</xsl:stylesheet>
